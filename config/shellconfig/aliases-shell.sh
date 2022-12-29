@@ -24,6 +24,7 @@ alias ...=../..
 alias ....=../../..
 alias .....=../../../..
 alias ......=../../../../..
+alias .......=../../../../../..
 alias cp='cp -r'
 alias cpi='cp -iv'
 alias df='df -kH'
@@ -45,7 +46,7 @@ alias rmi='rm -i'
 alias rmf='rm -rf'
 alias rs='open -a /Applications/RStudio.app .'
 alias sc="source $HOME/.zshrc" # source ~/.zshrc
-alias tree="exa --tree --all --group-directories-first -I '.git|.svn|.hg|.idea|.vscode'"
+alias tree="exa --tree --all --group-directories-first -I '.git|.svn|.hg|.idea|.vscode|.Rproj.user'"
 alias t1="tree --level=1"
 alias tl1="t1 --long"
 alias t2="tree --level=2"
@@ -57,15 +58,6 @@ alias tl4="t4 --long"
 alias top=htop
 alias ttop='top -ocpu -R -F -s 2 ln30'
 alias v='nvim'
-
-# Conda aliases --
-# TODO: clean up these aliases 
-alias activate="conda activate"
-alias deactivate="conda deactivate"
-alias cel="conda env list"
-alias ced="conda env remove -n"
-alias ceu="conda env update -f"
-alias condaupdate="conda update -n base -c defaults conda"
 
 # Additional clean/wash aliases --
 # Source: https://github.com/ameensol/shell/blob/master/.zshenv#L29-L30
