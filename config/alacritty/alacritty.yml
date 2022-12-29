@@ -5,7 +5,7 @@ env:
 
 font:
   normal:
-    family: 'MesloLGL Nerd Font Mono'
+    family: "MesloLGL Nerd Font Mono"
     # style: Medium
   size: 20.0
 
@@ -16,6 +16,11 @@ window:
     y: 16
   dynamic_padding: false
   decorations: buttonless
+
+# Copy on mouse selection
+# https://github.com/alacritty/alacritty/issues/2768#issuecomment-526760816
+selection:
+  save_to_clipboard: true
 
 key_bindings:
   - { key: Comma, mods: Command, chars: "\x02," }
