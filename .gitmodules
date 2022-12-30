@@ -1,0 +1,12 @@
+[submodule "submods/catpuccin/alacritty"]
+	path = submods/catpuccin/alacritty
+	url = git@github.com:catppuccin/alacritty.git
+[submodule "submods/catpuccin/bat"]
+	path = submods/catpuccin/bat
+	url = git@github.com:catppuccin/bat.git
+[submodule "submods/catpuccin/lazygit"]
+	path = submods/catpuccin/lazygit
+	url = git@github.com:catppuccin/lazygit.git
+[submodule "submods/catpuccin/vimium"]
+	path = submods/catpuccin/vimium
+	url = git@github.com:catppuccin/vimium.git
