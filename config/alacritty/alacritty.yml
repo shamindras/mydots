@@ -6,7 +6,6 @@ env:
 font:
   normal:
     family: "MesloLGL Nerd Font Mono"
-    # style: Medium
   size: 20.0
 
 window:
