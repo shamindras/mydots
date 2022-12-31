@@ -49,8 +49,6 @@ brew "harfbuzz"
 brew "little-cms2"
 # Image processing and image analysis library
 brew "leptonica"
-# Generate introspection data for GObject libraries
-brew "gobject-introspection"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
 # Secure Reliable Transport
@@ -73,6 +71,10 @@ brew "libdap"
 brew "proj"
 # Library and tools for dealing with GeoTIFF
 brew "libgeotiff"
+# Database of common MIME types
+brew "shared-mime-info"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
 # Adds spatial SQL capabilities to SQLite
 brew "libspatialite"
 # Package for scientific computing with Python
@@ -87,22 +89,20 @@ brew "gh"
 brew "ghostscript"
 # Distributed revision control system
 brew "git"
-# Blazing fast terminal-ui for git written in rust
-brew "gitui"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Alternative to top/htop
 brew "glances"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
 # Improved top (interactive process viewer)
 brew "htop"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Spell checker and morphological analyzer
 brew "hunspell"
-# Database of common MIME types
-brew "shared-mime-info"
-# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
-brew "libheif"
 # Library for reading RAW files from digital photo cameras
 brew "libraw"
 # Tools and libraries to manipulate images in many formats
