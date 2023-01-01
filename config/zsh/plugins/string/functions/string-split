@@ -1,0 +1,7 @@
+local sep=$1; shift
+local s
+for s in "${(ps.$sep.)@}"; do
+  echo $s
+done
+
+# vim: ft=zsh

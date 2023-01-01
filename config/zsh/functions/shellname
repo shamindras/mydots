@@ -1,0 +1,4 @@
+local shellname=$(ps -p $$ -ocomm=)
+echo ${shellname#*-}
+
+# vim: ft=zsh
