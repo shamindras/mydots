@@ -1,3 +1,6 @@
+# Disable the blank line at the start of the prompt
+add_newline = false
+
 [character]
 success_symbol = "[](white)"
 error_symbol = "[](red)"
@@ -7,6 +10,9 @@ vicmd_symbol = "[](green)"
 style = "blue bold"
 truncation_length = 8
 truncate_to_repo = false
+
+[cmd_duration]
+disabled = true
 
 [rust]
 disabled = true
