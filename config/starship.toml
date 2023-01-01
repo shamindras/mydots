@@ -5,6 +5,17 @@ vicmd_symbol = "[](green)"
 
 [directory]
 style = "blue bold"
+truncation_length = 8
+truncate_to_repo = false
+
+[rust]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[rlang]
+disabled = true
 
 [package]
 disabled = true
