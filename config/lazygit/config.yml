@@ -1,6 +1,6 @@
 gui:
   showIcons: true
-  # Use the mocha catpuccin theme
+  # use the mocha catpuccin theme
   # see: https://github.com/catppuccin/lazygit/tree/06f59293af3de63621f3de946f58e4fe3b60a8f0#usage
   theme:
     lightTheme: false
