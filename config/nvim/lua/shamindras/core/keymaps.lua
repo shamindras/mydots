@@ -36,7 +36,7 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 -- source: https://github.com/ThePrimeagen/init.lua/blob/bc8324fa1c31bd1bc81fb8a5dde684dffd324f84/lua/theprimeagen/remap.lua
 ---------------------
 
-keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -68,7 +68,7 @@ keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-keymap.set("n", "<leader>S", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+keymap.set("n", "<leader>sr", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 ----------------------
