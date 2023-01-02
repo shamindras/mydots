@@ -1,0 +1,28 @@
+# prompt
+# sindresorhus/pure
+
+# framework plugins
+# ohmyzsh/ohmyzsh path:plugins/extract
+# ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
+# ohmyzsh/ohmyzsh path:plugins/magic-enter
+
+# general plugins
+# zshzoo/macos
+mattmc3/zsh-safe-rm
+mattmc3/zman
+
+# utility plugins
+romkatv/zsh-bench kind:path
+
+# deferred plugins
+olets/zsh-abbr kind:defer
+zdharma-continuum/fast-syntax-highlighting kind:defer
+
+### ^^^ ###
+
+# zsh-users
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+
+# vim: ft=zsh
