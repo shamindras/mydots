@@ -2,4 +2,4 @@
 zsh-defer source $ZPLUGINDIR/.external/zsh-abbr/zsh-abbr.plugin.zsh
 
 # Abbreviations config.
-ABBR_USER_ABBREVIATIONS_FILE=$ZDOTDIR/lib/abbr.zsh
+ABBR_USER_ABBREVIATIONS_FILE=$ZDOTDIR/library/abbr.zsh
