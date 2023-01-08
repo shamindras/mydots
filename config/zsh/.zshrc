@@ -21,7 +21,12 @@ eval "$(zoxide init zsh)"
 # where to look for autoloaded/custom functions
 # source: https://github.com/rothgar/mastering-zsh/blob/921766e642bcf02d0f1be8fc57d0159a867299b0/docs/config/general.md#fpath
 local ZFUNCDIR="${ZFUNCDIR:-${ZDOTDIR:-~/.config/zsh}/functions}"
-fpath+="$ZFUNCDIR"
+fpath=("$ZFUNCDIR" $fpath)
+
+# autoload all custom functions
+for _rcfile in $ZFUNCDIR/*(.N); do
+    autoload -Uk "$_rcfile"
+done
 
 # done profiling
 [[ ${ZPROFRC:-0} -eq 0 ]] || { unset ZPROFRC && zprof }
