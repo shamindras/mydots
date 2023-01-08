@@ -20,11 +20,11 @@ alias b='bat --style=grid,numbers'
 alias bat='bat --style=grid,numbers'
 alias cd='z' # use zoxide as the default
 alias ..='z ..'
-alias ...=../..
-alias ....=../../..
-alias .....=../../../..
-alias ......=../../../../..
-alias .......=../../../../../..
+alias ...='z ../..'
+alias ....='z ../../..'
+alias .....='z ../../../..'
+alias ......='z ../../../../..'
+alias .......='z ../../../../../..'
 alias cp='cp -r'
 alias cpi='cp -iv'
 alias df='df -kH'
