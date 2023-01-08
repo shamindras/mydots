@@ -1,5 +1,4 @@
 require("shamindras.plugins-setup")
-require("shamindras.plugins-setup")
 require("shamindras.core.options")
 require("shamindras.core.keymaps")
 require("shamindras.core.colorscheme")

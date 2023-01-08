@@ -8,10 +8,14 @@ use a [modern unix](https://github.com/ibraheemdev/modern-unix) workflow.
 These dotfiles have been inspired by the following (and many more) people. I
 thank them for so openly sharing their great work.
 
-<!-- TODO: Add links -->
+- [Josh Medeski](https://github.com/joshmedeski/dotfiles/tree/15576d333a884b4fb867a24f121162e4f4293a86)
+- [Mathias Bynen's dotfiles](https://github.com/mathiasbynens/dotfiles)
+  and in particular [his macOS dotfiles](https://github.com/mathiasbynens/dotfiles/blob/master/.macos)[]
+- [Minh Phuc Tran's dotfiles](https://github.com/phuctm97/dotfiles)
 
-- Mathias Bynens
-- Tran
+## Main utilities
+
+- see `./config/brew/Brewfile` for macos `brew` utilities
 
 ## Development Log of these dotfiles
 
@@ -48,4 +52,5 @@ time. It is meant for my personal recollection.
         ./macos.sh
         ```
 
-    <!-- TODO: Install gi instruction + script -->
+7.  Update `zsh`
+<!-- TODO: Install gi instruction + script -->

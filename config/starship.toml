@@ -11,28 +11,19 @@ style = "blue bold"
 truncation_length = 8
 truncate_to_repo = false
 
+[aws]
+disabled = true
+
 [cmd_duration]
-disabled = true
-
-[rust]
-disabled = true
-
-[nodejs]
-disabled = true
-
-[rlang]
 disabled = true
 
 [package]
 disabled = true
 
-[username]
+[rlang]
 disabled = true
 
 [hostname]
-disabled = true
-
-[aws]
 disabled = true
 
 [docker_context]
@@ -44,11 +35,24 @@ disabled = true
 [git_commit]
 disabled = true
 
-[git_state]
+[git_metrics]
 disabled = true
 
-[git_metrics]
+[git_state]
 disabled = true
 
 [git_status]
 disabled = true
+
+[lua]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[rust] 
+disabled = true
+
+[username]
+disabled = true
+
