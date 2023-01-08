@@ -10,3 +10,6 @@
 [submodule "submods/catpuccin/vimium"]
 	path = submods/catpuccin/vimium
 	url = git@github.com:catppuccin/vimium.git
+[submodule "submods/zsh/alacritty"]
+	path = submods/zsh/alacritty
+	url = git@github.com:alacritty/alacritty.git
