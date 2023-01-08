@@ -11,7 +11,7 @@ done
 unset _rcfile
 
 # local overrides
-[[ ! -f $DOTFILES.local/zsh/zshrc_local.zsh ]] || source $DOTFILES.local/zsh/zshrc_local.zsh
+# [[ ! -f $DOTFILES.local/zsh/zshrc_local.zsh ]] || source $DOTFILES.local/zsh/zshrc_local.zsh
 
 # Add zoxide to the zsh
 # Source:
@@ -20,7 +20,8 @@ eval "$(zoxide init zsh)"
 
 # where to look for autoloaded/custom functions
 # source: https://github.com/rothgar/mastering-zsh/blob/921766e642bcf02d0f1be8fc57d0159a867299b0/docs/config/general.md#fpath
-fpath+="${ZDOTDIR:-~}/functions" 
+local ZFUNCDIR="${ZFUNCDIR:-${ZDOTDIR:-~/.config/zsh}/functions}"
+fpath+="$ZFUNCDIR"
 
 # done profiling
 [[ ${ZPROFRC:-0} -eq 0 ]] || { unset ZPROFRC && zprof }
