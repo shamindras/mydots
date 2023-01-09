@@ -17,9 +17,6 @@ disabled = true
 [cmd_duration]
 disabled = true
 
-[package]
-disabled = true
-
 [rlang]
 disabled = true
 
@@ -48,6 +45,9 @@ disabled = true
 disabled = true
 
 [nodejs]
+disabled = true
+
+[package]
 disabled = true
 
 [rust] 
