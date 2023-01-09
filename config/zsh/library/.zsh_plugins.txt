@@ -14,8 +14,10 @@ mattmc3/zman
 # utility plugins
 romkatv/zsh-bench kind:path
 
+# abbreviations
+# olets/zsh-abbr kind:defer
+
 # deferred plugins
-olets/zsh-abbr kind:defer
 zdharma-continuum/fast-syntax-highlighting kind:defer
 
 ### ^^^ ###

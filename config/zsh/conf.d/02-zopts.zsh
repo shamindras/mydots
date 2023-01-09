@@ -12,7 +12,6 @@ _zopts=(
   PUSHD_TO_HOME           # pushd with no args goes to home.
   NO_PUSHD_IGNORE_DUPS    # Allow duplicates in the stack.
 
-
   # completion
   ALWAYS_TO_END           # Move cursor to the end of a completed word.
   AUTO_LIST               # Automatically list choices on ambiguous completion.
@@ -68,5 +67,7 @@ _zopts=(
   NO_BEEP                # Be quiet!
 )
 
+# TODO: remove comments below
 setopt $_zopts
 unset _zopts
+
