@@ -1,7 +1,8 @@
 require("shamindras.plugins-setup")
 require("shamindras.core.options")
 require("shamindras.core.keymaps")
-require("shamindras.core.colorscheme")
+require("shamindras.plugins.catppuccin")
+require("shamindras.core.colorscheme") -- load this after loading theme plugin
 require("shamindras.plugins.comment")
 require("shamindras.plugins.nvim-tree")
 require("shamindras.plugins.lualine")

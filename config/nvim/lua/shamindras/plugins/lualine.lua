@@ -4,33 +4,66 @@ if not status then
 	return
 end
 
--- get lualine nightfly theme
-local lualine_nightfly = require("lualine.themes.nightfly")
+-- import catppuccin theme safely
+local status_ok, theme = pcall(require, "lualine.themes.catppuccin")
+if not status_ok then
+	return
+end
+theme.normal.c.bg = nil
 
--- new colors for theme
-local new_colors = {
-	blue = "#65D1FF",
-	green = "#3EFFDC",
-	violet = "#FF61EF",
-	yellow = "#FFDA7B",
-	black = "#000000",
+local hide_in_width = function()
+	return vim.fn.winwidth(0) > 80
+end
+
+local diagnostics = {
+	"diagnostics",
+	sources = { "nvim_diagnostic" },
+	sections = { "error", "warn", "info", "hint" },
+	symbols = { error = " ", warn = " ", hint = " ", info = " " },
+	colored = true,
+	update_in_insert = false,
+	always_visible = false,
 }
 
--- change nightlfy theme colors
-lualine_nightfly.normal.a.bg = new_colors.blue
-lualine_nightfly.insert.a.bg = new_colors.green
-lualine_nightfly.visual.a.bg = new_colors.violet
-lualine_nightfly.command = {
-	a = {
-		gui = "bold",
-		bg = new_colors.yellow,
-		fg = new_colors.black, -- black
-	},
+local diff = {
+	"diff",
+	colored = true,
+	symbols = { added = " ", modified = " ", removed = " " },
+	cond = hide_in_width,
 }
 
 -- configure lualine with modified theme
 lualine.setup({
 	options = {
-		theme = lualine_nightfly,
+		theme = theme,
+		icons_enabled = true,
+		always_divide_middle = false,
+		section_separators = { left = "", right = "" },
+		component_separators = { left = "", right = "" },
+		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
+	},
+
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { diff, diagnostics, "branch" },
+		lualine_c = {
+			{
+				"filename",
+				-- 0 = just filename, 1 = relative path, 2 = absolute path
+				path = 1,
+			},
+		},
+		lualine_x = { "fileformat", "filetype" },
+		lualine_y = {},
+		lualine_z = { "location" },
+	},
+
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { "filename", "location" },
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
 	},
 })
