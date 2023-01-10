@@ -1,14 +1,14 @@
-[submodule "submods/catpuccin/alacritty"]
-	path = submods/catpuccin/alacritty
+[submodule "submods/catppuccin/alacritty"]
+	path = submods/catppuccin/alacritty
 	url = git@github.com:catppuccin/alacritty.git
-[submodule "submods/catpuccin/bat"]
-	path = submods/catpuccin/bat
+[submodule "submods/catppuccin/bat"]
+	path = submods/catppuccin/bat
 	url = git@github.com:catppuccin/bat.git
-[submodule "submods/catpuccin/lazygit"]
-	path = submods/catpuccin/lazygit
+[submodule "submods/catppuccin/lazygit"]
+	path = submods/catppuccin/lazygit
 	url = git@github.com:catppuccin/lazygit.git
-[submodule "submods/catpuccin/vimium"]
-	path = submods/catpuccin/vimium
+[submodule "submods/catppuccin/vimium"]
+	path = submods/catppuccin/vimium
 	url = git@github.com:catppuccin/vimium.git
 [submodule "submods/zsh/alacritty"]
 	path = submods/zsh/alacritty
