@@ -1,7 +1,7 @@
 gui:
   showIcons: true
   # use the mocha catpuccin theme
-  # see: https://github.com/catppuccin/lazygit/tree/06f59293af3de63621f3de946f58e4fe3b60a8f0#usage
+  # see: https://github.com/catppuccin/lazygit#usage
   theme:
     lightTheme: false
     activeBorderColor:
@@ -25,6 +25,7 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --side-by-side --line-numbers --paging=never
+    useConfig: false
 os:
   editCommand: "nvim"
   editCommandTemplate: "{{editor}} +{{line}} -- {{filename}}"
