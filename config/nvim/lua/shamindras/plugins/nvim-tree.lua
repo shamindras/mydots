@@ -23,6 +23,7 @@ nvimtree.setup({
 				},
 			},
 		},
+		indent_markers = { enable = true },
 	},
 	-- disable window_picker for
 	-- explorer to work well with
@@ -35,7 +36,7 @@ nvimtree.setup({
 		},
 	},
 	view = {
-		width = 30,
+		width = 25,
 		side = "right",
 	},
 	-- 	git = {

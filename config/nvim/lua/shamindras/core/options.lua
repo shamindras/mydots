@@ -28,28 +28,28 @@ opt.cursorline = true -- highlight the current cursor line
 -- turn on termguicolors for nightfly colorscheme to work
 -- (have to use iterm2 or any other true color terminal)
 opt.termguicolors = true
-opt.background = "dark" -- colorschemes that can be light or dark will be made dark
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
-vim.opt.colorcolumn = "80"
+opt.background = 'dark' -- colorschemes that can be light or dark will be made dark
+opt.signcolumn = 'yes' -- show sign column so that text doesn't shift
+vim.opt.colorcolumn = '80'
 
 -- backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+opt.backspace = 'indent,eol,start' -- allow backspace on indent, end of line or insert mode start position
 
 -- clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+opt.clipboard:append('unnamedplus') -- use system clipboard as default register
 
 -- split windows
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
-opt.iskeyword:append("-") -- consider string-string as whole word
+opt.iskeyword:append('-') -- consider string-string as whole word
 
 ---------------------
 -- Primagean Keymaps
 -- source: https://github.com/ThePrimeagen/init.lua/blob/bc8324fa1c31bd1bc81fb8a5dde684dffd324f84/lua/theprimeagen/set.lua
 ---------------------
 
-vim.opt.guicursor = ""
+vim.opt.guicursor = ''
 
 -- vim.opt.swapfile = false
 -- vim.opt.backup = false
@@ -60,6 +60,6 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.scrolloff = 8
-vim.opt.isfname:append("@-@")
+vim.opt.isfname:append('@-@')
 
 vim.opt.updatetime = 50
