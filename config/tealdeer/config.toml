@@ -1,0 +1,21 @@
+# source: https://dbrgn.github.io/tealdeer/config.html#config-example
+[display]
+compact = false
+use_pager = true
+
+[style.command_name]
+foreground = "red"
+
+[style.example_text]
+foreground = "green"
+
+[style.example_code]
+foreground = "blue"
+
+[style.example_variable]
+foreground = "blue"
+underline = true
+
+[updates]
+auto_update = true
+

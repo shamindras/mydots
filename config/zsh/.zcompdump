@@ -1,4 +1,4 @@
-#files: 1090	version: 5.8.1
+#files: 1089	version: 5.8.1
 
 _comps=(
 '-' '_precommand'
@@ -461,7 +461,6 @@ _comps=(
 'echoti' '_echoti'
 'ed' '_ed'
 'egrep' '_grep'
-'elan' '_elan'
 'elfdump' '_elfdump'
 'elinks' '_elinks'
 'emacs' '_emacs'
@@ -1569,6 +1568,7 @@ _comps=(
 'tkconch' '_twisted'
 'tkinfo' '_texinfo'
 'tla' '_tla'
+'tldr' '_tldr'
 'tload' '_tload'
 'tmux' '_tmux'
 'tmuxinator' '_tmuxinator'
@@ -1964,9 +1964,9 @@ bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
 autoload -Uz _alacritty _alacritty _bat _brew _brew_services \
-            _cargo _dust _elan _exa _fd \
-            _gh _git _hyperfine _lpass _rg \
-            _starship _the_silver_searcher _vifm _zoxide _SUSEconfig \
+            _cargo _dust _exa _fd _gh \
+            _git _hyperfine _lpass _rg _starship \
+            _the_silver_searcher _tldr _vifm _zoxide _SUSEconfig \
             _a2ps _a2utils _aap _abcde _absolute_command_paths \
             _ack _acpi _acpitool _acroread _adb \
             _add-zle-hook-widget _add-zsh-hook _alias _aliases _all_labels \

@@ -31,7 +31,6 @@ alias df='df -kH'
 alias dus='du -sckx * | sort -nr'
 alias ed='open -a /Applications/Emacs.app'
 alias g=git
-alias gu=gitui
 alias history=omz_history
 alias jn="jupyter notebook"
 alias jl="jupyter lab"
