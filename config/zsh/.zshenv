@@ -86,12 +86,6 @@ export HIST_STAMPS="mm/dd/yyyy"
 export HISTSIZE=500000
 export SAVEHIST=500000
 
-# Cache
-export CCACHE_DIR="${XDG_CACHE_HOME}/ccache"
-
-# Conda
-export CONDARC="${XDG_CONFIG_HOME}/condarc"
-
 # FZF options
 export FZF_DEFAULT_COMMAND='fd -HI -L --exclude .git --color=always'
 export FZF_DEFAULT_OPTS='
@@ -108,73 +102,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview '(bat --theme ansi-dark --color always {} 2> /dev/null || exa --tree --color=always {}) 2> /dev/null | head -200'"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 export FZF_ALT_C_OPTS="--preview 'exa --tree --color=always {} | head -200'"
-
-# Julia
-export JULIA_NUM_THREADS=16
-export JULIA_DEPOT_PATH="${XDG_DATA_HOME}/julia"
-
-# Less
-# TODO: uncomment the less options and see if they are useful given bat
-export LESSHISTFILE="${XDG_DATA_HOME}/lesshst"
-# export LESSOPEN='| /usr/bin/env lessfilter %s 2>&-'
-# export LESS_TERMCAP_mb=$'\E[01;31m'    # begin blinking
-# export LESS_TERMCAP_md=$'\E[01;31m'    # begin bold
-# export LESS_TERMCAP_me=$'\E[0m'        # end mode
-# export LESS_TERMCAP_se=$'\E[0m'        # end standout-mode
-# export LESS_TERMCAP_so=$'\E[01;44;33m' # begin standout-mode - info box
-# export LESS_TERMCAP_ue=$'\E[0m'        # end underline
-# export LESS_TERMCAP_us=$'\E[01;32m'    # begin underline
-
-# Node
-# source: https://blog.mitsunee.com/post/n-xdg-setup
-export NVM_DIR="${XDG_DATA_HOME}/nvm"
-export N_PREFIX="${XDG_DATA_HOME}/node"
-export N_CACHE_PREFIX="${XDG_CACHE_HOME}"
-export N_PRESERVE_NPM=1
-export N_PRESERVE_COREPACK=1
-export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
-export COREPACK_HOME="${XDG_DATA_HOME}/corepack"
-export NODE_REPL_HISTORY="${XDG_STATE_HOME}/node_repl/history"
-
-
-# Python
-export PYENV_ROOT="${XDG_DATA_HOME}/pyenv"
-export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
-export PYLINTHOME="${XDG_CACHE_HOME}/pylint.d"
-export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
-export MPLCONFIGDIR="${XDG_DATA_HOME}/matplotlib"
-export MYPY_CACHE_DIR="${XDG_CACHE_HOME}/mypy_cache"
-export PYGMENTIZE_STYLE='paraiso-dark'
-export PYTHONDONTWRITEBYTECODE="TRUE" # TODO: toggle if reviewing bytecode
-
-# R
-export R_USER="${XDG_CONFIG_HOME}/R"
-export R_ENVIRON_USER="${XDG_CONFIG_HOME}/R/Renviron"
-export R_PROFILE_USER="${XDG_CONFIG_HOME}/R/Rprofile"
-export R_MAKEVARS_USER="${XDG_CONFIG_HOME}/R/Makevars"
-export R_HISTFILE="${XDG_DATA_HOME}/Rhistory"
-# export R_LIBS_USER="${HOME}/Library/R/4.0/library"
-export R_HISTSIZE=100000
-export R_STARTUP_DEBUG=TRUE
-export MKL_NUM_THREADS=16
-export OMP_NUM_THREADS=16
-
-# Rust/Cargo
-export CARGO_HOME="${XDG_DATA_HOME}/cargo"
-export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
-
-# Tealdeer
-export TEALDEER_CACHE_DIR="${XDG_CACHE_HOME}/tealdeer"
-export TEALDEER_CONFIG_DIR="${XDG_CONFIG_HOME}/tealdeer"
-
-# Terminfo
-export TERMINFO="${XDG_DATA_HOME}"/terminfo
-export TERMINFO_DIRS="${XDG_DATA_HOME}"/terminfo:/usr/share/terminfo
-
-# Zoxide
-export _ZO_DATA_DIR="${XDG_DATA_HOME}/zoxide"
-export _ZO_ECHO=0
-export _ZO_MAXAGE=100
 
 # Set the list of directories that cd searches
 # cdpath=(

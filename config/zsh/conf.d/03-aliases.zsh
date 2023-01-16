@@ -16,6 +16,7 @@ alias cbox="z $HOME/DROPBOX/REPOS/codebox"
 alias dot="z $HOME/DROPBOX/REPOS/ss_dotfiles"
 
 # Aliases -----
+alias -- -='z -' # note we need -- since command begins with -
 alias b='bat --style=grid,numbers'
 alias bat='bat --style=grid,numbers'
 alias cd='z' # use zoxide as the default
