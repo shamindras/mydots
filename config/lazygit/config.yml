@@ -21,11 +21,24 @@ gui:
       - "#89b4fa" # Blue
     unstagedChangesColor:
       - red # Red
+
+# use delta for git diffs
 git:
   paging:
     colorArg: always
     pager: delta --dark --side-by-side --line-numbers --paging=never
     useConfig: false
+
+# use conventional commits via commitizen
+# source: https://github.com/jesseduffield/lazygit/wiki/Custom-Commands-Compendium#committing-via-commitizen-cz-c
+customCommands:
+  - key: "C"
+    command: "git cz c"
+    description: "commit with commitizen"
+    context: "files"
+    loadingText: "opening commitizen commit tool"
+    subprocess: true
+
 os:
   editCommand: "nvim"
   editCommandTemplate: "{{editor}} +{{line}} -- {{filename}}"
