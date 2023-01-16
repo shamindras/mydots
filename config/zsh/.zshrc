@@ -1,6 +1,10 @@
 # load zprof first if we need to profile
-[[ ${ZPROFRC:-0} -eq 0 ]] || zmodload zsh/zprof
-alias zprofrc="ZPROFRC=1 zsh"
+# [[ ${ZPROFRC:-0} -eq 0 ]] || zmodload zsh/zprof
+# alias zprofrc="ZPROFRC=1 zsh"
+
+# This will clear the "Last login" message for new tabs in terminal
+# source: https://stackoverflow.com/a/69915614/4687531
+printf '\33c\e[3J'
 
 # conf.d
 setopt extended_glob
@@ -58,4 +62,4 @@ bindkey "^[[B" history-search-forward               # down arrow
 bindkey "^[[A" history-search-backward              # up arrow
 
 # done profiling
-[[ ${ZPROFRC:-0} -eq 0 ]] || { unset ZPROFRC && zprof }
+# [[ ${ZPROFRC:-0} -eq 0 ]] || { unset ZPROFRC && zprof }

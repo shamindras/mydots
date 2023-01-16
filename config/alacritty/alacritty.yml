@@ -6,11 +6,11 @@ env:
 font:
   normal:
     family: "MesloLGL Nerd Font Mono"
-  size: 24.0
+  size: 17.0
 
 window:
-  # opacity: 1
-  opacity: 0.90
+  opacity: 1
+  # opacity: 0.90
   padding:
     x: 18
     y: 16
@@ -53,7 +53,7 @@ key_bindings:
   - { key: P, mods: Command, chars: ":GoToFile\n" } # files
   - { key: P, mods: Command|Shift, chars: ":GoToCommand\n" } # commands
   # - { key: Period, mods: Command, chars: "\x1b\x20\x2e\x0a" } (causes popup to be unfocused)
-  - { key: Q, mods: Command, chars: ":q\n" } # quit vim
+  # - { key: Q, mods: Command, chars: ":q\n" } # quit vim
   - { key: R, mods: Command, chars: "\x1b\x5b\x41\x0a" }
   - { key: RBracket, mods: Command, chars: "\x09" }
   - { key: RBracket, mods: Command|Shift, chars: "\x02n" }

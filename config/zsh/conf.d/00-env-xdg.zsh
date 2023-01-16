@@ -46,6 +46,10 @@ export OMP_NUM_THREADS=16
 export CARGO_HOME="${CARGO_HOME:-$XDG_DATA_HOME/cargo}"
 export RUSTUP_HOME="${RUSTUP_HOME:-$XDG_DATA_HOME/rustup}"
 
+# starship
+export STARSHIP_CONFIG="${STARSHIP_CONFIG:-$XDG_CONFIG_HOME/starship/starship.toml}"
+export STARSHIP_CACHE="${STARSHIP_CACHE:-$XDG_CACHE_HOME/starship/cache}"
+
 # Tealdeer
 export TEALDEER_CACHE_DIR="${TEALDEER_CACHE_DIR:-$XDG_CACHE_HOME/tealdeer}"
 export TEALDEER_CONFIG_DIR="${TEALDEER_CONFIG_DIR:-$XDG_CONFIG_HOME/tealdeer}"
