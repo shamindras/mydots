@@ -1,0 +1,15 @@
+# source: https://mypy.readthedocs.io/en/stable/config_file.html
+# Note: this is the global mypy config file. The order in which the config are
+# read are as follows.
+# First look for `mypy.ini` with a fallback to `.mypy.ini`, then 
+# `pyproject.toml`, then `setup.cfg` in the current directory, 
+# then `$XDG_CONFIG_HOME/mypy/config`, then `~/.config/mypy/config`, 
+# and finally `.mypy.ini` in the user home directory if none of them are found;
+
+# Typically in practice it is best to just use a `pyproject.toml` in the project 
+# root directory.
+
+# Global options:
+[mypy]
+warn_return_any = True
+warn_unused_configs = True
