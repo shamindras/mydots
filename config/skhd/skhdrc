@@ -62,7 +62,7 @@ shift + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9
 # source:
 # https://github.com/koekeishiya/yabai/issues/1250#issuecomment-1157252933 and
 # https://github.com/koekeishiya/yabai/issues/1250#issuecomment-1181616780
-cmd + shift - return : open -n -a 'Alacritty.app'
+alt - a : open -n -a 'Alacritty.app'
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 shift + alt - n : yabai -m space --create && \
