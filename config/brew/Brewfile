@@ -17,6 +17,8 @@ brew "bat"
 brew "glib"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
+# Defines a standard way of committing rules and communicating it
+brew "commitizen"
 # GNU multiple precision arithmetic library
 brew "gmp"
 # GNU File, Shell, and Text utilities
