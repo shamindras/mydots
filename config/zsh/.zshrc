@@ -55,6 +55,21 @@ bindkey "^U"   kill-whole-line  # ctrl-u
 bindkey "^[[B" history-search-forward               # down arrow
 bindkey "^[[A" history-search-backward              # up arrow
 
+# configure conda --------
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/usr/local/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/usr/local/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+
 # configure zoxide --------
 # source: https://github.com/ajeetdsouza/zoxide/tree/d99e9b7d8671946dafe53662c519045f84d1d334#step-2-add-zoxide-to-your-shell
 eval "$(zoxide init zsh)"

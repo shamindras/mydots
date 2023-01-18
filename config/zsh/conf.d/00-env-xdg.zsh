@@ -12,7 +12,7 @@ export CCACHE_DIR="${CCACHE_DIR:-$XDG_CACHE_HOME/ccache}"
 
 # Conda
 # TODO: check this references a file, not a dir
-export CONDARC="${CONDARC:-$XDG_CONFIG_HOME/condarc}"
+export CONDARC="${CONDARC:-$XDG_CONFIG_HOME/conda/condarc}"
 
 # Julia
 export JULIA_NUM_THREADS=16
