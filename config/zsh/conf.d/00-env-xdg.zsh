@@ -51,7 +51,10 @@ export STARSHIP_CONFIG="${STARSHIP_CONFIG:-$XDG_CONFIG_HOME/starship/starship.to
 export STARSHIP_CACHE="${STARSHIP_CACHE:-$XDG_CACHE_HOME/starship/cache}"
 
 # Tealdeer
-export TEALDEER_CACHE_DIR="${TEALDEER_CACHE_DIR:-$XDG_CACHE_HOME/tealdeer}"
+# TEALDEER_CACHE_DIR is deprecated, use cache_dir inside the tealdeer config
+# instead.
+# see: https://dbrgn.github.io/tealdeer/config_directories.html
+# export TEALDEER_CACHE_DIR="${TEALDEER_CACHE_DIR:-$XDG_CACHE_HOME/tealdeer}"
 export TEALDEER_CONFIG_DIR="${TEALDEER_CONFIG_DIR:-$XDG_CONFIG_HOME/tealdeer}"
 
 # Terminfo

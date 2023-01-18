@@ -3,6 +3,9 @@
 compact = false
 use_pager = true
 
+[directories]
+cache_dir = "/Users/shamindras/.cache/tealdeer" # need to hardcode path
+
 [style.command_name]
 foreground = "red"
 
