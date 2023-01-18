@@ -1,0 +1,36 @@
+# Global options:
+
+# NOTE: you have to use single-quoted strings in TOML for regular expressions.
+# It's the equivalent of r-strings in Python.  Multiline strings are treated as
+# verbose regular expressions by Black.  Use [ ] to denote a significant space
+# character.
+
+[mypy]
+warn_return_any = True
+warn_unused_configs = True
+
+# source: https://github.com/psf/black/blob/60a2e8e2c26d6312cd86b40f680c5037571acafc/pyproject.toml#L8-L23
+[tool.black]
+line-length = 80
+# TODO: check if this setting is correct for ipynb notebooks
+include = ['\.pyi?$', '\.ipynb$']
+# preview = false
+# target-version = ['py37', 'py38']
+# extend-exclude = '''
+# /(
+#   # The following are specific to Black, you probably don't want those.
+#   | blib2to3
+#   | tests/data
+#   | profiling
+# )/
+# '''
+
+# ensure that isort is black compatible
+# source: https://github.com/psf/black/blob/60a2e8e2c26d6312cd86b40f680c5037571acafc/pyproject.toml#L183-L189
+[tool.isort]
+atomic = true
+profile = "black"
+line_length = 80
+skip_gitignore = true
+# skip_glob = ["src/blib2to3", "tests/data", "profiling"]
+known_first_party = ["black", "blib2to3", "blackd", "_black_version"]

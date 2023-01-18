@@ -278,3 +278,4 @@ rsconnect/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,R,VisualStudioCode,Python
 config/lazygit/state.yml
+config/zsh/.antidote/
