@@ -18,13 +18,7 @@ if [[ "$OSTYPE" == darwin* ]] && (( $+commands[brew] )); then
 fi
 
 # Set $PATH.
-path=(
-  $HOME/{,s}bin(N)
-  /opt/{homebrew,local}/{,s}bin(N)
-  /usr/local/{,s}bin(N)
-  $path
-)
-
+# TODO: add pyenv, conda, and python path below
 path=(
   # core
   $HOME/{,s}bin(N)
@@ -45,3 +39,17 @@ path=(
 
   $path
 )
+
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"

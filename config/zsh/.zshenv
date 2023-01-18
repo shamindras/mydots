@@ -86,6 +86,10 @@ export HIST_STAMPS="mm/dd/yyyy"
 export HISTSIZE=500000
 export SAVEHIST=500000
 
+export MANPATH="/usr/local/share/man:/usr/share/man:${MANPATH}"
+export INFOPATH="/usr/local/share/info:/usr/share/info:${INFOPATH}"
+export HELPDIR="${MANPATH}"
+
 # FZF options
 export FZF_DEFAULT_COMMAND='fd -HI -L --exclude .git --color=always'
 export FZF_DEFAULT_OPTS='
@@ -102,6 +106,15 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview '(bat --theme ansi-dark --color always {} 2> /dev/null || exa --tree --color=always {}) 2> /dev/null | head -200'"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 export FZF_ALT_C_OPTS="--preview 'exa --tree --color=always {} | head -200'"
+
+# $HISTFILE belongs in the data home, not with zsh configs
+HISTFILE=${XDG_DATA_HOME:-~/.local/share}/zsh/history
+[[ -f "$HISTFILE" ]] || { mkdir -p "$HISTFILE:h" && touch "$HISTFILE" }
+
+# you can set $SAVEHIST and $HISTSIZE to anything greater than the ZSH defaults
+# (1000 and 2000 respectively), but if not we make them way bigger.
+[[ $SAVEHIST -gt 1000 ]] || SAVEHIST=20000
+[[ $HISTSIZE -gt 2000 ]] || HISTSIZE=100000
 
 # Set the list of directories that cd searches
 # cdpath=(

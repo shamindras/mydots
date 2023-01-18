@@ -5,6 +5,7 @@
 # https://zsh.sourceforge.io/Doc/Release/Options.html
 _zopts=(
   # directory opts
+  AUTO_CD                 # If a command isn't valid, but is a directory, cd to that dir
   AUTO_PUSHD              # Push the old directory onto the stack when using cd.
   CDABLE_VARS             # Change directory to a path stored in a variable.
   PUSHD_MINUS             # Swap meanings of +/- in dirstack to be more natural.
