@@ -1,0 +1,4 @@
+# fetch system settings using neofetch and copy to clipboard
+nfc() {
+    neofetch --stdout --color_blocks off | pbcopy
+}
