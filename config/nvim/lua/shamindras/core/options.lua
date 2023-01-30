@@ -13,6 +13,9 @@ opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 vim.opt.smartindent = true
 
+-- expand the wildmenu
+opt.wildmode = 'longest:full,full'
+
 -- line wrapping
 opt.wrap = false -- disable line wrapping
 
@@ -51,8 +54,8 @@ opt.iskeyword:append('-') -- consider string-string as whole word
 
 vim.opt.guicursor = ''
 
--- vim.opt.swapfile = false
--- vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.backup = false
 -- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 -- vim.opt.undofile = true
 

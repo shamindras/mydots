@@ -1,6 +1,7 @@
 require('shamindras.plugins-setup')
 require('shamindras.core.options')
 require('shamindras.core.keymaps')
+require('shamindras.core.autocmds')
 require('shamindras.plugins.catppuccin') -- catppuccin color theme
 require('shamindras.core.colorscheme') -- load this after loading color theme
 require('shamindras.plugins.comment')

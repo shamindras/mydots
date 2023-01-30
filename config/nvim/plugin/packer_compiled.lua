@@ -119,6 +119,12 @@ _G.packer_plugins = {
     path = "/Users/shamindras/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["impatient.nvim"] = {
+    config = { "\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14impatient\frequire\0" },
+    loaded = true,
+    path = "/Users/shamindras/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/Users/shamindras/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
@@ -239,6 +245,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: impatient.nvim
+time([[Config for impatient.nvim]], true)
+try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14impatient\frequire\0", "config", "impatient.nvim")
+time([[Config for impatient.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]

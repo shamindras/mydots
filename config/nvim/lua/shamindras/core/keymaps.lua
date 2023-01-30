@@ -3,6 +3,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 local keymap = vim.keymap -- for conciseness
+local opt_silent = { silent = true } -- suppress output in keymaps
 
 ---------------------
 -- General Keymaps
@@ -22,15 +23,25 @@ keymap.set('n', '<leader>+', '<C-a>') -- increment
 keymap.set('n', '<leader>-', '<C-x>') -- decrement
 
 -- window management
-keymap.set('n', '<leader>sv', '<C-w>v') -- split window vertically
-keymap.set('n', '<leader>sh', '<C-w>s') -- split window horizontally
-keymap.set('n', '<leader>se', '<C-w>=') -- make split windows equal width & height
-keymap.set('n', '<leader>sx', ':close<CR>') -- close current split window
+keymap.set('n', '<leader>sv', '<C-w>v', opt_silent) -- split window vertically
+keymap.set('n', '<leader>sh', '<C-w>s', opt_silent) -- split window horizontally
+keymap.set('n', '<leader>se', '<C-w>=', opt_silent) -- make split windows equal width & height
+keymap.set('n', '<leader>sx', ':close<CR>', opt_silent) -- close current split window
 
-keymap.set('n', '<leader>to', ':tabnew<CR>') -- open new tab
-keymap.set('n', '<leader>tx', ':tabclose<CR>') -- close current tab
-keymap.set('n', '<leader>tn', ':tabn<CR>') --  go to next tab
-keymap.set('n', '<leader>tp', ':tabp<CR>') --  go to previous tab
+keymap.set('n', '<leader>to', ':tabnew<CR>', opt_silent) -- open new tab
+keymap.set('n', '<leader>tx', ':tabclose<CR>', opt_silent) -- close current tab
+keymap.set('n', '<leader>tn', ':tabn<CR>', opt_silent) --  go to next tab
+keymap.set('n', '<leader>tp', ':tabp<CR>', opt_silent) --  go to previous tab
+
+-- Map H and L to ^ and $, respectively
+-- source: https://github.com/famiu/dot-nvim/blob/d7922d6ce9d9483cd68c67abb883e8ab91a17e4f/lua/keybinds.lua#L4-L6
+keymap.set('n', 'H', '^', opt_silent)
+keymap.set('n', 'L', '$', opt_silent)
+
+-- Don't leave visual mode after indenting
+-- source: https://github.com/famiu/dot-nvim/blob/d7922d6ce9d9483cd68c67abb883e8ab91a17e4f/lua/keybinds.lua#L8-L10
+keymap.set('v', '>', '>gv^', opt_silent)
+keymap.set('v', '<', '<gv^', opt_silent)
 
 ---------------------
 -- Primagean Keymaps
@@ -74,24 +85,34 @@ keymap.set(
   '<leader>sr',
   ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>'
 )
-keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
+keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', opt_silent)
 
 ----------------------
 -- Wrapping Keybinds
 ----------------------
 -- Mappings for navigating wrapped lines
--- source: https://github.com/ejmastnak/dotfiles/blob/05c77a6d72e8c42486d6f8e82dca4f5e25d5323d/config/nvim/lua/personal/init/navigation.lua#L6-L8
-vim.keymap.set('n', 'j', 'gj')
-vim.keymap.set('n', 'k', 'gk')
+-- source: https://www.lazyvim.org/configuration/general#keymaps
+vim.keymap.set(
+  'n',
+  'j',
+  "v:count == 0 ? 'gj' : 'j'",
+  { expr = true, silent = true }
+)
+vim.keymap.set(
+  'n',
+  'k',
+  "v:count == 0 ? 'gk' : 'k'",
+  { expr = true, silent = true }
+)
 
--- For easy macro playback; note that this overrides entering Ex mode with Q
+-- quickly executing macros with the q register
 vim.keymap.set('n', 'Q', '@q')
 
 -- vim-maximizer
 keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>') -- toggle split window maximization
 
 -- nvim-tree
-keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>') -- toggle file explorer
+keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', opt_silent) -- toggle file explorer
 
 -- telescope
 -- use ripgrep as the file finder, and exclude submods directory, else there is
@@ -103,7 +124,13 @@ keymap.set(
   { noremap = true }
 )
 -- keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<cr>') -- find string in current working directory as you type
+keymap.set(
+  'n',
+  '<leader>fs',
+  "<cmd>lua require'telescope.builtin'.live_grep({ find_command = {'rg', '--files', '--hidden', '-g', '!{**/.git/*,**/.svn/*,**/.hg/*,submods}' }})<cr>",
+  { noremap = true }
+)
+-- keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<cr>') -- find string in current working directory as you type
 keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<cr>') -- find string under cursor in current working directory
 keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>') -- list open buffers in current neovim instance
 keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>') -- list available help tags

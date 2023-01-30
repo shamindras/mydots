@@ -39,6 +39,16 @@ return packer.startup(function(use)
   -- packer can manage itself
   use('wbthomason/packer.nvim')
 
+  -- cache and speed up nvim startup time
+  -- TODO: consider creating a separate plugins/impatient.lua file as
+  -- with other plugins, here the setup is very minimal
+  use({
+    'lewis6991/impatient.nvim',
+    config = function()
+      require('impatient')
+    end,
+  })
+
   use('nvim-lua/plenary.nvim') -- lua functions that many plugins use
 
   use({ 'catppuccin/nvim', as = 'catppuccin' }) -- preferred colorscheme
