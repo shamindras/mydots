@@ -34,7 +34,7 @@ export PYTHONSTARTUP="${PYTHONSTARTUP:-$XDG_CONFIG_HOME/python/pythonrc}"
 export MPLCONFIGDIR="${MPLCONFIGDIR:-$XDG_DATA_HOME/matplotlib}"
 export MYPY_CACHE_DIR="${MYPY_CACHE_DIR:-$XDG_CACHE_HOME/mypy_cache}"
 export PYGMENTIZE_STYLE='paraiso-dark'
-export PYTHONDONTWRITEBYTECODE="TRUE" # TODO: toggle if reviewing bytecode
+export PYTHONDONTWRITEBYTECODE=false # TODO: toggle if reviewing bytecode
 export PIPENV_IGNORE_VIRTUALENVS=-1 # always install to pyenv virtualenv
 
 # R

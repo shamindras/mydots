@@ -21,14 +21,20 @@ brew "glib"
 brew "python@3.9"
 # Defines a standard way of committing rules and communicating it
 brew "commitizen"
-# GNU multiple precision arithmetic library
-brew "gmp"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
 # International domain name library (IDNA2008, Punycode and TR46)
 brew "libidn2"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
+# GNU multiple precision arithmetic library
+brew "gmp"
+# General-purpose scripting language
+brew "php"
+# Dependency Manager for PHP
+brew "composer"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
 # Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
 # Convert text between DOS, UNIX, and Mac formats
@@ -57,8 +63,6 @@ brew "srt"
 brew "tesseract"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
-# ODBC 3 connectivity for UNIX
-brew "unixodbc"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GNU compiler collection
@@ -117,6 +121,8 @@ brew "lastpass-cli"
 brew "lazygit"
 # MNG/JNG reference library
 brew "libmng"
+# Package manager for the Lua programming language
+brew "luarocks"
 # NCurses Disk Usage
 brew "ncdu"
 # Fast, highly customisable system info script
@@ -133,8 +139,6 @@ brew "pandoc"
 brew "pandoc-crossref"
 # Highly capable, feature-rich programming language
 brew "perl"
-# General-purpose scripting language
-brew "php"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Python dependency management tool
