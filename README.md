@@ -3,8 +3,8 @@
 This is a repo of my personal dotfiles for `macOS`. The main philosophy is to
 use
 
-*Warning: these dotfiles are currently a work in progress (not yet complete).
-Feel free to take Inspiration from them, but don't use them as is.*
+**Warning:** _these dotfiles are currently a work in progress (not yet complete).
+Feel free to take Inspiration from them, but don't use them as is._
 
 - a [modern unix](https://github.com/ibraheemdev/modern-unix) workflow.
 - the [`XDG`](https://github.com/mattmc3/zebrafish/blob/main/zebrafish.zsh#L13-L36)

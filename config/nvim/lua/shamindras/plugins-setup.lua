@@ -41,7 +41,8 @@ return packer.startup(function(use)
 
   -- cache and speed up nvim startup time
   -- TODO: consider creating a separate plugins/impatient.lua file as
-  -- with other plugins, here the setup is very minimal
+  -- with other plugins, here tho the setup is very minimal so we have just
+  -- imported directly in this file as below for now.
   use({
     'lewis6991/impatient.nvim',
     config = function()

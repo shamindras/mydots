@@ -44,7 +44,7 @@ null_ls.setup({
     formatting.shfmt,
     formatting.shellharden,
     diagnostics.shellcheck,
-    code_actions.shellcheck,
+    -- code_actions.shellcheck,
 
     -- python
     formatting.black,

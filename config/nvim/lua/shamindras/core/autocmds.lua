@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 -- source: https://www.lazyvim.org/configuration/general#auto-commands
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank()
+    vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 500 })
   end,
 })
 

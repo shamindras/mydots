@@ -107,12 +107,16 @@ vim.keymap.set(
 
 -- quickly executing macros with the q register
 vim.keymap.set('n', 'Q', '@q')
+vim.keymap.set('v', 'Q', '<cmd>norm @q<cr>')
 
 -- vim-maximizer
 keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>') -- toggle split window maximization
 
 -- nvim-tree
 keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', opt_silent) -- toggle file explorer
+
+-- tab out of `(['` etc in insert mode
+-- vim.keymap.set('i', '<Tab>', getline('.')[col('.')-1] =~? '[]>)}]' || getline('.')[col('.')-1] =~? '[''"`]' && synIDattr(synID(line("."), col(".")+1, 1), "name") !~? 'string', {silent = true, expr = true, remap =false})
 
 -- telescope
 -- use ripgrep as the file finder, and exclude submods directory, else there is

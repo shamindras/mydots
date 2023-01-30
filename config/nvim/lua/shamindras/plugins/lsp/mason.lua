@@ -23,13 +23,17 @@ mason.setup()
 mason_lspconfig.setup({
   -- list of servers for mason to install
   ensure_installed = {
-    'tsserver',
-    'pyright',
-    'html',
     'cssls',
-    'tailwindcss',
-    'sumneko_lua',
+    'bashls',
     'emmet_ls',
+    'html',
+    'jedi_language_server',
+    'pylsp',
+    'pyright',
+    'r_language_server',
+    'sumneko_lua',
+    'tailwindcss',
+    'tsserver',
   },
   -- auto-install configured servers (with lspconfig)
   automatic_installation = true, -- not the same as ensure_installed
