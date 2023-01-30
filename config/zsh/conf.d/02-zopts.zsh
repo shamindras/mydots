@@ -60,6 +60,11 @@ _zopts=(
   # prompt opts
   PROMPT_SUBST           # Expand parameters in prompt variables
 
+  # HACK: prevent % sign from being displayed at the end of output
+  # source: https://superuser.com/a/645612
+  PROMPT_CR              # Attempt to preserve a partial line
+  PROMPT_SP              # Print a carriage return just before printing a prompt in the line editor
+
   # scripts and functions
   MULTIOS                # Write to multiple descriptors.
 
@@ -71,4 +76,8 @@ _zopts=(
 # TODO: remove comments below
 setopt $_zopts
 unset _zopts
+
+# HACK: prevent % sign from being displayed at the end of output
+# source: https://superuser.com/a/645612
+export PROMPT_EOL_MARK=""
 

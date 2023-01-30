@@ -55,21 +55,6 @@ bindkey "^U"   kill-whole-line  # ctrl-u
 bindkey "^[[B" history-search-forward               # down arrow
 bindkey "^[[A" history-search-backward              # up arrow
 
-# configure conda --------
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "/usr/local/anaconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/usr/local/anaconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-
 # configure zoxide --------
 # source: https://github.com/ajeetdsouza/zoxide/tree/d99e9b7d8671946dafe53662c519045f84d1d334#step-2-add-zoxide-to-your-shell
 eval "$(zoxide init zsh)"
@@ -86,3 +71,14 @@ fi
 # fzf key bindings
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
+# configure pyenv -------
+eval "$(pyenv init -)"
+
+# configure pyenv-virtualenv -------
+# NOTE: this is a hack to speed up the shell startup time caused by the 
+# default virtualenv-init command (commented out below).
+# source: https://github.com/pyenv/pyenv-virtualenv/issues/259#issuecomment-1007432346
+# TODO: evaluate this and check behavior over time.
+
+# eval "$(pyenv virtualenv-init -)" # default command
+eval "$(pyenv virtualenv-init - | sed s/precmd/precwd/g)"

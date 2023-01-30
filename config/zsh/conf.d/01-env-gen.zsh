@@ -37,6 +37,9 @@ path=(
   $HOME/.gem/ruby/*/bin(N)
   $HOMEBREW_PREFIX/share/npm/bin(N)
 
+  # pyenv
+  $PYENV_ROOT/bin(N)
+
   $path
 )
 

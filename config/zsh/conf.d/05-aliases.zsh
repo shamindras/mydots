@@ -32,7 +32,7 @@ alias df='df -kH'
 alias dus='du -sckx * | sort -nr'
 alias ed='open -a /Applications/Emacs.app'
 alias g=git
-alias history=omz_history
+# alias history=omz_history
 alias jn="jupyter notebook"
 alias jl="jupyter lab"
 alias ls='exa --color=always --group-directories-first --icons'
@@ -46,8 +46,8 @@ alias md='mkdir -p'
 alias rmi='rm -i'
 alias rmf='rm -rf'
 alias rs='open -a /Applications/RStudio.app .'
-alias sc="source $HOME/.zshrc" # source ~/.zshrc
-alias tree="exa --tree --all --group-directories-first -I '.git|.svn|.hg|.idea|.vscode|.Rproj.user'"
+alias sc="source $HOME/.config/zsh/.zshrc" # source ~/.zshrc
+alias tree="exa --tree --all --group-directories-first -I '.git|.svn|.hg|.idea|.vscode|.Rproj.user|.pytest_cache'"
 alias t1="tree --level=1"
 alias tl1="t1 --long"
 alias t2="tree --level=2"
@@ -59,6 +59,17 @@ alias tl4="t4 --long"
 alias top=htop
 alias ttop='top -ocpu -R -F -s 2 ln30'
 alias v='nvim'
+alias vh='nvim .' # nvim 'here', i.e., in the current directory.
+alias vhc='nvim .;clear;' # clear screen, to clean terminal after closing nvim
+
+# pyenv and pyenv-virtualenv related
+alias pv='pyenv version'
+alias pvg='pyenv global'
+alias pvl='pyenv local'
+alias pvi='pyenv install'
+alias pvu='pyenv uninstall'
+alias pvs='pyenv versions'
+alias bp='bpython'
 
 # misc
 alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'

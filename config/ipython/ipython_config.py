@@ -1,20 +1,34 @@
 # source: https://ipython.readthedocs.io/en/stable/config/intro.html#example-configuration-file
+# source: https://ipython.org/ipython-doc/3/config/intro.html 
+# c = get_config()
+
 c.TerminalIPythonApp.display_banner = True
 c.InteractiveShellApp.log_level = 20
 # c.InteractiveShellApp.extensions = [
 #     'myextension'
 # ]
 c.InteractiveShellApp.exec_lines = [
-    'import numpy as np', 
-    'import pandas as pd' 
+    'import numpy as np',
+    'import pandas as pd'
 ]
-c.InteractiveShell.colors = 'LightBG'
+# c.InteractiveShellApp.exec_files = [
+#     'mycode.py',
+#     'fancy.ipy'
+# ]
+c.InteractiveShell.autoindent = True
+c.InteractiveShell.colors = 'linux'
+c.InteractiveShell.confirm_exit = False
+c.InteractiveShell.editor = 'nvim'
 c.InteractiveShell.xmode = 'Context'
-c.TerminalInteractiveShell.confirm_exit = False
-c.TerminalInteractiveShell.editor = 'nvim'
+
+# c.PromptManager.in_template  = 'In [\#]: '
+# c.PromptManager.in2_template = '   .\D.: '
+# c.PromptManager.out_template = 'Out[\#]: '
+# c.PromptManager.justify = True
 
 c.PrefilterManager.multi_line_specials = True
 
 c.AliasManager.user_aliases = [
- ('ll', 'ls -al')
+ ('la', 'ls -al')
 ]
+
