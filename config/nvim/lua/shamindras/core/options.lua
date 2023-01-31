@@ -19,6 +19,31 @@ opt.wildmode = 'longest:full,full'
 -- line wrapping
 opt.wrap = false -- disable line wrapping
 
+-- disable default vim start screen display
+-- opt.shortmess = opt.shortmess .. 'I'
+
+-- Text behaviour
+-- source: https://github.com/tjdevries/config_manager/blob/66d5262e1d142bfde5ebc19ba120ae86cb16d1d9/xdg_config/nvim/plugin/options.lua#L82-L91
+-- TODO: these formatoptions are overridden at runtime, may need to insert this
+-- in the `ftplugin` directory. See https://www.reddit.com/r/neovim/comments/sqld76/comment/hwmoc0z/?utm_source=share&utm_medium=web2x&context=3
+-- for details.
+opt.formatoptions = opt.formatoptions
+  - 'a' -- Auto formatting is BAD.
+  + 't' -- auto-wrap text using textwidth
+  + 'c' -- In general, I like it when comments respect textwidth
+  + 'q' -- Allow formatting comments w/ gq
+  - 'o' -- O and o, don't continue comments
+  + 'r' -- But do continue when pressing enter.
+  + 'n' -- Indent past the formatlistpat, not underneath it.
+  + 'j' -- Auto-remove comments if possible.
+  - '2' -- I'm not in gradeschool anymore
+
+-- don't use 2 spaces when joining sentences
+opt.joinspaces = false
+
+-- disable default vim startup display screen
+opt.shortmess:append('I')
+
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive

@@ -207,6 +207,14 @@ _G.packer_plugins = {
     path = "/Users/shamindras/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["tabout.nvim"] = {
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/Users/shamindras/.local/share/nvim/site/pack/packer/opt/tabout.nvim",
+    url = "https://github.com/abecodes/tabout.nvim",
+    wants = { "nvim-treesitter" }
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/shamindras/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -253,6 +261,8 @@ time([[Config for impatient.nvim]], false)
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-ts-autotag ]]
+vim.cmd [[ packadd nvim-cmp ]]
+vim.cmd [[ packadd tabout.nvim ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false

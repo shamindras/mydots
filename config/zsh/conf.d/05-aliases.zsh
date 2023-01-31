@@ -59,6 +59,7 @@ alias tl4="t4 --long"
 alias top=htop
 alias ttop='top -ocpu -R -F -s 2 ln30'
 alias v='nvim'
+alias vc='nvim;clear;' # clear screen, to clean terminal after closing nvim
 alias vh='nvim .' # nvim 'here', i.e., in the current directory.
 alias vhc='nvim .;clear;' # clear screen, to clean terminal after closing nvim
 

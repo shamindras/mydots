@@ -9,8 +9,9 @@ local opt_silent = { silent = true } -- suppress output in keymaps
 -- General Keymaps
 ---------------------
 
--- use jk to exit insert mode
+-- use jj/kk to exit insert mode
 keymap.set('i', 'jj', '<ESC>l')
+keymap.set('i', 'kk', '<ESC>l')
 
 -- clear search highlights
 keymap.set('n', '<leader>nh', ':nohl<CR>')
@@ -115,8 +116,10 @@ keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>') -- toggle split window max
 -- nvim-tree
 keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', opt_silent) -- toggle file explorer
 
--- tab out of `(['` etc in insert mode
--- vim.keymap.set('i', '<Tab>', getline('.')[col('.')-1] =~? '[]>)}]' || getline('.')[col('.')-1] =~? '[''"`]' && synIDattr(synID(line("."), col(".")+1, 1), "name") !~? 'string', {silent = true, expr = true, remap =false})
+-- Use operator pending mode to visually select the whole buffer
+-- e.g. dA = delete buffer ALL, yA = copy whole buffer ALL
+vim.keymap.set('o', 'A', ':<C-U>normal! mzggVG<CR>`z')
+vim.keymap.set('x', 'A', ':<C-U>normal! ggVG<CR>')
 
 -- telescope
 -- use ripgrep as the file finder, and exclude submods directory, else there is

@@ -31,8 +31,9 @@ null_ls.setup({
     }),
 
     -- text
-    code_actions.proselint,
-    diagnostics.proselint,
+    -- code_actions.proselint,
+    -- diagnostics.proselint,
+
     diagnostics.write_good.with({
       extra_args = { '--no-adverb' },
       diagnostics_postprocess = function(diagnostic)
