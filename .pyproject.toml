@@ -11,7 +11,7 @@ warn_unused_configs = True
 
 # source: https://github.com/psf/black/blob/60a2e8e2c26d6312cd86b40f680c5037571acafc/pyproject.toml#L8-L23
 [tool.black]
-line-length = 80
+line-length = 79
 # TODO: check if this setting is correct for ipynb notebooks
 include = ['\.pyi?$', '\.ipynb$']
 # preview = false
@@ -30,7 +30,7 @@ include = ['\.pyi?$', '\.ipynb$']
 [tool.isort]
 atomic = true
 profile = "black"
-line_length = 80
+line_length = 79
 skip_gitignore = true
 # skip_glob = ["src/blib2to3", "tests/data", "profiling"]
 known_first_party = ["black", "blib2to3", "blackd", "_black_version"]
