@@ -13,6 +13,10 @@ opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 vim.opt.smartindent = true
 
+-- Use global statusline
+opt.laststatus = 3
+vim.api.nvim_set_hl(0, 'WinSeparator', { bg = 'None' })
+
 -- expand the wildmenu
 opt.wildmode = 'longest:full,full'
 
