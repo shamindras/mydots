@@ -5,7 +5,7 @@
 # verbose regular expressions by Black.  Use [ ] to denote a significant space
 # character.
 
-[mypy]
+[tool.mypy]
 warn_return_any = True
 warn_unused_configs = True
 

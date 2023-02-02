@@ -11,7 +11,12 @@ treesitter.setup({
     enable = true,
   },
   -- enable indentation
-  indent = { enable = true },
+  -- TODO: currently disabled python indentation since it can cause issues
+  -- when editing python scripts. Experiment and see if we need to revert this
+  -- setting.
+  -- source: https://www.reddit.com/r/neovim/comments/l3mpiv/comment/gkn44vu/?utm_source=share&utm_medium=web2x&context=3
+  indent = { enable = true, disable = { 'python' } },
+  -- indent = { enable = true },
   -- enable autotagging (w/ nvim-ts-autotag plugin)
   autotag = { enable = true },
   -- ensure these language parsers are installed

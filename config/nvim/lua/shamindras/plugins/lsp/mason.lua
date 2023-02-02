@@ -44,17 +44,18 @@ mason_null_ls.setup({
   ensure_installed = {
     'black', -- python formatter
     'eslint_d', -- ts/js linter
+    'flake8', -- python linter
     'hadolint', -- docker linter
-    'proselint', -- prose linter
-    'write_good', -- naive prose linter for English
     'isort', -- python import sorter
     'prettier', -- ts/js formatter
+    'proselint', -- prose linter
     'pyright', -- python type checker
-    'flake8', -- python linter
-    'stylua', -- lua formatter
     'shellcheck', -- shell linter
     'shellharden', -- shell formatter
     'shfmt', -- shell formatter
+    'stylua', -- lua formatter
+    'taplo', -- toml linter
+    'write_good', -- naive prose linter for English
   },
   -- auto-install configured formatters & linters (with null-ls)
   automatic_installation = true,
