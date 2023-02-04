@@ -80,5 +80,5 @@ eval "$(pyenv init -)"
 # source: https://github.com/pyenv/pyenv-virtualenv/issues/259#issuecomment-1007432346
 # TODO: evaluate this and check behavior over time.
 
-# eval "$(pyenv virtualenv-init -)" # default command
+# eval "$(pyenv virtualenv-init -)" # default command, typically low
 eval "$(pyenv virtualenv-init - | sed s/precmd/precwd/g)"

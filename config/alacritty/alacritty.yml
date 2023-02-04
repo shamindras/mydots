@@ -6,7 +6,7 @@ env:
 font:
   normal:
     family: "MesloLGL Nerd Font Mono"
-  size: 16
+  size: 26
 
 window:
   # opacity: 1
@@ -14,7 +14,7 @@ window:
   padding:
     x: 3
     y: 3
-  dynamic_padding: true
+  dynamic_padding: false
   decorations: buttonless
 
 # Copy on mouse selection

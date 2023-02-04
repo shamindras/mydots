@@ -63,6 +63,10 @@ alias vc='nvim;clear;' # clear screen, to clean terminal after closing nvim
 alias vh='nvim .' # nvim 'here', i.e., in the current directory.
 alias vhc='nvim .;clear;' # clear screen, to clean terminal after closing nvim
 
+# subversion alias 
+# source: running `xdg-ninja` in `$HOME` gave this suggestion
+alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
+
 # pyenv and pyenv-virtualenv related
 alias pv='pyenv version'
 alias pvg='pyenv global'

@@ -1,5 +1,3 @@
-#!/usr/bin/env sh
-
 # the following skhd config was mainly taken from Josh Medeski's setup
 # source: https://github.com/joshmedeski/dotfiles/blob/f43577e695c9bfba1cbd9423a5ec731ba7e1f3fd/mackup/.skhdrc
 

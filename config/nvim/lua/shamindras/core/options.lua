@@ -23,25 +23,6 @@ opt.wildmode = 'longest:full,full'
 -- line wrapping
 opt.wrap = false -- disable line wrapping
 
--- disable default vim start screen display
--- opt.shortmess = opt.shortmess .. 'I'
-
--- Text behaviour
--- source: https://github.com/tjdevries/config_manager/blob/66d5262e1d142bfde5ebc19ba120ae86cb16d1d9/xdg_config/nvim/plugin/options.lua#L82-L91
--- TODO: these formatoptions are overridden at runtime, may need to insert this
--- in the `ftplugin` directory. See https://www.reddit.com/r/neovim/comments/sqld76/comment/hwmoc0z/?utm_source=share&utm_medium=web2x&context=3
--- for details.
-opt.formatoptions = opt.formatoptions
-  - 'a' -- Auto formatting is BAD.
-  + 't' -- auto-wrap text using textwidth
-  + 'c' -- In general, I like it when comments respect textwidth
-  + 'q' -- Allow formatting comments w/ gq
-  - 'o' -- O and o, don't continue comments
-  + 'r' -- But do continue when pressing enter.
-  + 'n' -- Indent past the formatlistpat, not underneath it.
-  + 'j' -- Auto-remove comments if possible.
-  - '2' -- I'm not in gradeschool anymore
-
 -- don't use 2 spaces when joining sentences
 opt.joinspaces = false
 
@@ -62,7 +43,7 @@ opt.cursorline = true -- highlight the current cursor line
 opt.termguicolors = true
 opt.background = 'dark' -- colorschemes that can be light or dark will be made dark
 opt.signcolumn = 'yes' -- show sign column so that text doesn't shift
-vim.opt.colorcolumn = '80'
+vim.opt.colorcolumn = '81'
 
 -- backspace
 opt.backspace = 'indent,eol,start' -- allow backspace on indent, end of line or insert mode start position

@@ -1,3 +1,4 @@
+require('shamindras.plugins.impatient') -- impatient must be loaded first
 require('shamindras.plugins-setup')
 require('shamindras.core.options')
 require('shamindras.core.keymaps')

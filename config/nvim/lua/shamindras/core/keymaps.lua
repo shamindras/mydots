@@ -14,10 +14,14 @@ keymap.set('i', 'jj', '<ESC>l')
 keymap.set('i', 'kk', '<ESC>l')
 
 -- clear search highlights
-keymap.set('n', '<leader>nh', ':nohl<CR>')
+keymap.set('n', '<leader>nh', '<cmd>nohl<CR>')
 
--- delete single character without copying into register
+-- delete/change single character without copying into register
 keymap.set('n', 'x', '"_x')
+keymap.set('n', 'X', '"_X')
+-- TODO: check whether the following are correct
+keymap.set('n', 'c', '"_c')
+keymap.set('n', 'C', '"_C')
 
 -- increment/decrement numbers
 keymap.set('n', '<leader>+', '<C-a>') -- increment
@@ -27,12 +31,12 @@ keymap.set('n', '<leader>-', '<C-x>') -- decrement
 keymap.set('n', '<leader>sv', '<C-w>v', opt_silent) -- split window vertically
 keymap.set('n', '<leader>sh', '<C-w>s', opt_silent) -- split window horizontally
 keymap.set('n', '<leader>se', '<C-w>=', opt_silent) -- make split windows equal width & height
-keymap.set('n', '<leader>sx', ':close<CR>', opt_silent) -- close current split window
+keymap.set('n', '<leader>sx', '<cmd>close<CR>', opt_silent) -- close current split window
 
-keymap.set('n', '<leader>to', ':tabnew<CR>', opt_silent) -- open new tab
-keymap.set('n', '<leader>tx', ':tabclose<CR>', opt_silent) -- close current tab
-keymap.set('n', '<leader>tn', ':tabn<CR>', opt_silent) --  go to next tab
-keymap.set('n', '<leader>tp', ':tabp<CR>', opt_silent) --  go to previous tab
+keymap.set('n', '<leader>to', '<cmd>tabnew<CR>', opt_silent) -- open new tab
+keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', opt_silent) -- close current tab
+keymap.set('n', '<leader>tn', '<cmd>tabn<CR>', opt_silent) --  go to next tab
+keymap.set('n', '<leader>tp', '<cmd>tabp<CR>', opt_silent) --  go to previous tab
 
 -- Map H and L to ^ and $, respectively
 -- source: https://github.com/famiu/dot-nvim/blob/d7922d6ce9d9483cd68c67abb883e8ab91a17e4f/lua/keybinds.lua#L4-L6
@@ -81,6 +85,7 @@ keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz')
 keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz')
 keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
 
+-- search and replace current cursor keyword
 keymap.set(
   'n',
   '<leader>sr',
@@ -111,15 +116,15 @@ vim.keymap.set('n', 'Q', '@q')
 vim.keymap.set('v', 'Q', '<cmd>norm @q<cr>')
 
 -- vim-maximizer
-keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>') -- toggle split window maximization
+keymap.set('n', '<leader>sm', '<cmd>MaximizerToggle<CR>') -- toggle split window maximization
 
 -- nvim-tree
-keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', opt_silent) -- toggle file explorer
+keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', opt_silent) -- toggle file explorer
 
 -- Use operator pending mode to visually select the whole buffer
 -- e.g. dA = delete buffer ALL, yA = copy whole buffer ALL
-vim.keymap.set('o', 'A', ':<C-U>normal! mzggVG<CR>`z')
-vim.keymap.set('x', 'A', ':<C-U>normal! ggVG<CR>')
+vim.keymap.set('o', 'A', '<cmd><C-U>normal! mzggVG<CR>`z')
+vim.keymap.set('x', 'A', '<cmd><C-U>normal! ggVG<CR>')
 
 -- telescope
 -- use ripgrep as the file finder, and exclude submods directory, else there is
@@ -149,4 +154,4 @@ keymap.set('n', '<leader>gb', '<cmd>Telescope git_branches<cr>') -- list git bra
 keymap.set('n', '<leader>gs', '<cmd>Telescope git_status<cr>') -- list current changes per file with diff preview ["gs" for git status]
 
 -- restart lsp server (not on youtube nvim video)
-keymap.set('n', '<leader>rs', ':LspRestart<CR>') -- mapping to restart lsp if necessary
+keymap.set('n', '<leader>rs', '<cmd>LspRestart<CR>') -- mapping to restart lsp if necessary

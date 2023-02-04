@@ -19,7 +19,8 @@ syntax = True
 arg_spec = True
 
 # History file (default: ~/.pythonhist):
-hist_file = $XDG_DATA_HOME/bpythonhistory
+# Can't use $XDG_DATA_HOME here, need to pass in ~/.local/share explicitly
+hist_file = ~/.local/share/bpython/.pythonhist
 
 # Number of lines to store in history (set to 0 to disable) (default: 100):
 hist_length = 100
