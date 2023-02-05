@@ -11,13 +11,13 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
 -- reload yabai using brew after updating config
 vim.api.nvim_create_autocmd('BufWritePost', {
-  pattern = { 'yabairc' },
+  pattern = { 'yabairc', '.yabairc' },
   command = '!brew services restart yabai',
 })
 
 -- reload skhd using brew after updating config
 vim.api.nvim_create_autocmd('BufWritePost', {
-  pattern = { 'skhdrc' },
+  pattern = { 'skhdrc', '.skhdrc' },
   command = '!brew services restart skhd',
 })
 

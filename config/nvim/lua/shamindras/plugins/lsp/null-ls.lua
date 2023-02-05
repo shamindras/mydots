@@ -14,6 +14,8 @@ local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
 -- configure null_ls
 null_ls.setup({
+  -- start in debug mode, should be `false` in general
+  debug = true,
   -- setup formatters & linters
   sources = {
     -- lua
@@ -49,6 +51,11 @@ null_ls.setup({
 
     -- python
     formatting.black,
+    -- formatting.black.with({
+    --   condition = function(utils)
+    --     return utils.root_has_file('pyproject.toml') -- change file extension if you use something else
+    --   end,
+    -- }),
     formatting.isort,
     diagnostics.flake8,
 
