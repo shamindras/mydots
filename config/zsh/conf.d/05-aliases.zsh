@@ -76,8 +76,9 @@ alias pvu='pyenv uninstall'
 alias pvs='pyenv versions'
 alias bp='bpython'
 
-# misc
-alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
+# benchmarking
+alias zbench='hyperfine "/usr/bin/time zsh -lic exit;" --warmup 5' # zsh
+alias vbench='hyperfine "nvim --headless +qa" --warmup 5' # nvim
 
 # Additional clean/wash aliases --
 # Source: https://github.com/ameensol/shell/blob/master/.zshenv#L29-L30
