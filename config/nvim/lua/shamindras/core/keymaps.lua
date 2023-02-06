@@ -9,9 +9,8 @@ local opt_silent = { silent = true } -- suppress output in keymaps
 -- General Keymaps
 ---------------------
 
--- use jj/kk to exit insert mode
+-- use jj to exit insert mode
 keymap.set('i', 'jj', '<ESC>l')
-keymap.set('i', 'kk', '<ESC>l')
 
 -- clear search highlights
 keymap.set('n', '<leader>nh', '<cmd>nohl<CR>')
@@ -75,11 +74,6 @@ keymap.set('n', '<leader>Y', '"+Y')
 keymap.set('n', '<leader>d', '"_d')
 keymap.set('v', '<leader>d', '"_d')
 
--- TODO: revisit this, to format buffer
--- keymap.set("n", "<leader>f", function()
---     vim.lsp.buf.format()
--- end)
-
 keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz')
 keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz')
 keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz')
@@ -91,6 +85,8 @@ keymap.set(
   '<leader>sr',
   ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>'
 )
+
+-- change current file to executable
 keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', opt_silent)
 
 ----------------------
@@ -121,10 +117,9 @@ keymap.set('n', '<leader>sm', '<cmd>MaximizerToggle<CR>') -- toggle split window
 -- nvim-tree
 keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', opt_silent) -- toggle file explorer
 
--- Use operator pending mode to visually select the whole buffer
--- e.g. dA = delete buffer ALL, yA = copy whole buffer ALL
-vim.keymap.set('o', 'A', '<cmd><C-U>normal! mzggVG<CR>`z')
-vim.keymap.set('x', 'A', '<cmd><C-U>normal! ggVG<CR>')
+-- delete/yank entire buffer
+keymap.set('n', '<leader>yb', ':%y+<CR>')
+keymap.set('n', '<leader>db', ':%delete<CR>')
 
 -- telescope
 -- use ripgrep as the file finder, and exclude submods directory, else there is
