@@ -1,4 +1,5 @@
 -- TODO: add more comments describing each autocmd
+-- TODO: ensure that each autocmd is in the proper `nvim_create_augroup`
 
 -- Config reload commands
 -- source: https://github.com/joshmedeski/dotfiles/blob/bb548e546f/mackup/.config/nvim/lua/joshmedeski/autocmd.lua
@@ -10,39 +11,48 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 
 -- reload yabai using brew after updating config
+local restart_brew_conf_group =
+  vim.api.nvim_create_augroup('restart_brew_conf', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = { 'yabairc', '.yabairc' },
   command = '!brew services restart yabai',
+  group = restart_brew_conf_group,
 })
 
 -- reload skhd using brew after updating config
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = { 'skhdrc', '.skhdrc' },
   command = '!brew services restart skhd',
+  group = restart_brew_conf_group,
 })
 
 -- lazyvim autocmds
 -- source: https://www.lazyvim.org/configuration/general#auto-commands
 
 -- Highlight on yank
-local highlight_group =
-  vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+local highlight_on_yank_group =
+  vim.api.nvim_create_augroup('highlight_on_yank', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 750 })
   end,
-  group = highlight_group,
+  group = highlight_on_yank_group,
   pattern = '*',
 })
 
 -- resize splits if window got resized
+local resize_window_group =
+  vim.api.nvim_create_augroup('resize_window', { clear = true })
 vim.api.nvim_create_autocmd({ 'VimResized' }, {
   callback = function()
     vim.cmd('tabdo wincmd =')
   end,
+  group = resize_window_group,
 })
 
 -- Goto last location when opening a buffer.
+local go_last_location_buffer_group =
+  vim.api.nvim_create_augroup('go_last_location_buffer', { clear = true })
 vim.api.nvim_create_autocmd('BufReadPost', {
   callback = function()
     local mark = vim.api.nvim_buf_get_mark(0, '"')
@@ -51,9 +61,12 @@ vim.api.nvim_create_autocmd('BufReadPost', {
       pcall(vim.api.nvim_win_set_cursor, 0, mark)
     end
   end,
+  group = go_last_location_buffer_group,
 })
 
 -- close some filetypes with <q>
+local close_buffer_q_group =
+  vim.api.nvim_create_augroup('close_buffer_q', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {
     'help',
@@ -75,10 +88,13 @@ vim.api.nvim_create_autocmd('FileType', {
       { buffer = event.buf, silent = true }
     )
   end,
+  group = close_buffer_q_group,
 })
 
 -- format options
 -- source: https://github.com/tjdevries/config_manager/blob/66d5262e1d142bfde5ebc19ba120ae86cb16d1d9/xdg_config/nvim/plugin/options.lua#L82-L91
+local formatoptions_mod_group =
+  vim.api.nvim_create_augroup('formatoptions_mod', { clear = true })
 vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
     -- let comments respect textwidth
@@ -108,5 +124,6 @@ vim.api.nvim_create_autocmd('BufEnter', {
     -- auto-wrap text using textwidth
     vim.cmd([[ setlocal formatoptions+=t ]])
   end,
+  group = formatoptions_mod_group,
   pattern = { '*' },
 })
