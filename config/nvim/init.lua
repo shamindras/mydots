@@ -20,6 +20,9 @@ require('shamindras.plugins.lualine')
 -- fuzzy finding within project
 require('shamindras.plugins.telescope')
 
+-- toggle terminal
+require('shamindras.plugins.toggleterm')
+
 -- lsp and auto-completion
 require('shamindras.plugins.nvim-cmp')
 require('shamindras.plugins.lsp.mason')
