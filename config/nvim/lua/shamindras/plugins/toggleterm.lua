@@ -26,8 +26,13 @@ toggleterm.setup({
 })
 
 local Terminal = terminal.Terminal
+local regularterm = Terminal:new({ hidden = true }) -- regular terminal session
 local lazygit = Terminal:new({ cmd = 'lazygit', hidden = true })
 local vifm = Terminal:new({ cmd = 'vifm', hidden = true })
+
+function _REGULARTERM_TOGGLE()
+  regularterm:toggle()
+end
 
 function _LAZYGIT_TOGGLE()
   lazygit:toggle()
@@ -36,6 +41,14 @@ end
 function _VIFM_TOGGLE()
   vifm:toggle()
 end
+
+-- regular terminal toggle, i.e., zsh
+vim.keymap.set(
+  'n',
+  '<leader>zt',
+  '<cmd>lua _REGULARTERM_TOGGLE()<CR>',
+  { silent = true }
+)
 
 -- git
 vim.keymap.set(

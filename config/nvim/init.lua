@@ -20,6 +20,9 @@ require('shamindras.plugins.lualine')
 -- fuzzy finding within project
 require('shamindras.plugins.telescope')
 
+-- indent blank lines indicator
+require('shamindras.plugins.indent-blankline')
+
 -- toggle terminal
 require('shamindras.plugins.toggleterm')
 
