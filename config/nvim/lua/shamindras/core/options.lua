@@ -76,3 +76,17 @@ vim.opt.scrolloff = 8
 vim.opt.isfname:append('@-@')
 
 vim.opt.updatetime = 50
+
+-- disable built-ins
+-- source: https://github.com/shaunsingh/nix-darwin-dotfiles/blob/2a2f1e0d128535d05ab92f1a23b184159b81ab23/.config/nvim/lua/options.lua#L50-L73
+local disabled_built_ins = {
+  'gzip',
+  'tar',
+  'tarPlugin',
+  'zip',
+  'zipPlugin',
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+  vim.g['loaded_' .. plugin] = 1
+end
