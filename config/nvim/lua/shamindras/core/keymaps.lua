@@ -52,11 +52,10 @@ keymap.set('v', '<', '<gv^', opt_silent)
 -- source: https://github.com/ThePrimeagen/init.lua/blob/bc8324fa1c31bd1bc81fb8a5dde684dffd324f84/lua/theprimeagen/remap.lua
 ---------------------
 
--- keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
+keymap.set('n', 'Y', 'yg$') -- yank up to the end of visual line
 keymap.set('n', 'J', 'mzJ`z')
 keymap.set('n', '<C-d>', '<C-d>zz')
 keymap.set('n', '<C-u>', '<C-u>zz')
