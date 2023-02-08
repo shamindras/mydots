@@ -1,6 +1,7 @@
-local setup, comment = pcall(require, "Comment")
+local setup, comment = pcall(require, 'Comment')
 if not setup then
-	return
+  return
 end
 
+-- set commenting
 comment.setup()

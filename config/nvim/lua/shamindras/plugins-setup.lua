@@ -63,6 +63,9 @@ return packer.startup(function(use)
   -- vs-code like icons
   use('nvim-tree/nvim-web-devicons')
 
+  -- highlight color codes
+  use('norcalli/nvim-colorizer.lua')
+
   -- statusline
   use('nvim-lualine/lualine.nvim')
 
