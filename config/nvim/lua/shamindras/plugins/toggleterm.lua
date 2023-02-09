@@ -28,7 +28,7 @@ toggleterm.setup({
 local Terminal = terminal.Terminal
 local regularterm = Terminal:new({ hidden = true }) -- regular terminal session
 local lazygit = Terminal:new({ cmd = 'lazygit', hidden = true })
-local vifm = Terminal:new({ cmd = 'vifm', hidden = true })
+local vifm = Terminal:new({ cmd = 'vifm .', hidden = true })
 
 function _REGULARTERM_TOGGLE()
   regularterm:toggle()

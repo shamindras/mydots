@@ -16,10 +16,10 @@ telescope.setup({
   defaults = {
     mappings = {
       i = {
-        ['<C-j>'] = actions.move_selection_next, -- move to next result
-        ['<C-k>'] = actions.move_selection_previous, -- move to prev result
-        -- ['<C-j>'] = actions.cycle_history_next, -- move to next history result
-        -- ['<C-k>'] = actions.cycle_history_prev, -- move to prev history result
+        ['<C-n>'] = actions.move_selection_next, -- move to next result
+        ['<C-p>'] = actions.move_selection_previous, -- move to prev result
+        ['<C-j>'] = actions.cycle_history_next, -- move to next history result
+        ['<C-k>'] = actions.cycle_history_prev, -- move to prev history result
         ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
       },
       n = {
