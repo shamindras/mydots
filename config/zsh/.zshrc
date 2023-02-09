@@ -72,18 +72,18 @@ fi
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
 # configure pyenv -------
-# eval "$(pyenv init -)"
+eval "$(pyenv init -)"
 
 # configure pyenv-virtualenv -------
 # HACK: this is a hack to speed up the shell startup time caused by the 
 # default virtualenv-init command (commented out below).
 # source: https://github.com/pyenv/pyenv-virtualenv/issues/259#issuecomment-1007432346
 
-# eval "$(pyenv virtualenv-init -)" # default command, typically low
+eval "$(pyenv virtualenv-init -)" # default command, typically low
 # eval "$(pyenv virtualenv-init - | sed s/precmd/precwd/g)"
 
 # NOTE: lazy loading pyenv and pyenv-virtualenv using 
 # source: https://github.com/davidparsson/zsh-pyenv-lazy
-if [ -f $ZDOTDIR/plugins/python/zsh-pyenv-lazy-load.zsh ]; then
-    source $ZDOTDIR/plugins/python/zsh-pyenv-lazy-load.zsh
-fi
+# if [ -f $ZDOTDIR/plugins/python/zsh-pyenv-lazy-load.zsh ]; then
+#     source $ZDOTDIR/plugins/python/zsh-pyenv-lazy-load.zsh
+# fi
