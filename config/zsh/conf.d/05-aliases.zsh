@@ -68,6 +68,7 @@ alias vhc='nvim .;clear;' # clear screen, to clean terminal after closing nvim
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 
 # pyenv and pyenv-virtualenv related
+alias p='pyenv which python;clear;'
 alias pv='pyenv version'
 alias pvg='pyenv global'
 alias pvl='pyenv local'

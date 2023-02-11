@@ -36,6 +36,7 @@ export MYPY_CACHE_DIR="${MYPY_CACHE_DIR:-$XDG_CACHE_HOME/mypy_cache}"
 export PYGMENTIZE_STYLE='paraiso-dark'
 export PYTHONDONTWRITEBYTECODE=false # TODO: toggle if reviewing bytecode
 export PIPENV_IGNORE_VIRTUALENVS=-1 # always install to pyenv virtualenv
+export ZSH_PYENV_LAZY_VIRTUALENV=1 # used by `../plugins/python/zsh-pyenv-lazy-load.zsh`
 
 # R
 export R_USER="${R_USER:-$XDG_CONFIG_HOME/R}"

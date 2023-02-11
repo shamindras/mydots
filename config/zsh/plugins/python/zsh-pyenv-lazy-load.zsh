@@ -1,37 +1,22 @@
 #!/usr/bin/env zsh 
 
-# lazy load pyenv
-# source: https://github.com/erikced/zsh-pyenv-lazy-load/blob/master/zsh-pyenv-lazy-load.zsh
-if type pyenv &> /dev/null; then
-  return
+# source: https://github.com/davidparsson/zsh-pyenv-lazy/blob/master/pyenv-lazy.plugin.zsh
+# need to ensure that ZSH_PYENV_LAZY_VIRTUALENV=1, in `.zshenv`
+# Try to find pyenv, if it's not on the path
+export PYENV_ROOT="${PYENV_ROOT:=${HOME}/.pyenv}"
+if ! type pyenv > /dev/null && [ -f "${PYENV_ROOT}/bin/pyenv" ]; then
+    export PATH="${PYENV_ROOT}/bin:${PATH}"
 fi
 
-_init_pyenv() {
-  unset -f pyenv _pyenv_chpwd_hook _init_pyenv
-  chpwd_functions[$chpwd_functions[(i)_pyenv_chpwd_hook]]=()
-
-  if [[ ! "$PATH" == */.pyenv/bin* ]]; then
-    export PATH="$HOME/.pyenv/bin:$PATH"
-  fi
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-}
-
-pyenv() {
-  _init_pyenv
-  pyenv "$@"
-}
-
-_pyenv_chpwd_hook() {
-  local DIR=$PWD
-  while [ "$DIR" != "/" ]; do
-    if [ -f "$DIR/.python-version" ]; then
-      _init_pyenv
-      break
-    fi
-    DIR=$DIR:h
-  done
-}
-echo "I'm here now..."
-export chpwd_functions=($chpwd_functions _pyenv_chpwd_hook)
+# Lazy load pyenv
+if type pyenv > /dev/null; then
+    export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}"
+    function pyenv() {
+        unset -f pyenv
+        eval "$(command pyenv init -)"
+        if [[ -n "${ZSH_PYENV_LAZY_VIRTUALENV}" ]]; then
+            eval "$(command pyenv virtualenv-init -)"
+        fi
+        pyenv $@
+    }
+fi
