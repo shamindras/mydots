@@ -43,6 +43,7 @@ mason_null_ls.setup({
   -- list of formatters & linters for mason to install
   ensure_installed = {
     'black', -- python formatter
+    'blue', -- python formatter
     'eslint_d', -- ts/js linter
     'flake8', -- python linter
     'hadolint', -- docker linter

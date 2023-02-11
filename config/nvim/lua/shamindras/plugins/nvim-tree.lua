@@ -13,6 +13,18 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
 -- configure nvim-tree
 nvimtree.setup({
+  disable_netrw = true,
+  hijack_netrw = true,
+  hijack_cursor = true,
+  hijack_unnamed_buffer_when_opening = false,
+  update_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_cwd = false,
+  },
+  filesystem_watchers = {
+    enable = true,
+  },
   -- change folder arrow icons
   renderer = {
     icons = {
@@ -36,6 +48,7 @@ nvimtree.setup({
     },
   },
   view = {
+    adaptive_size = false,
     width = 30,
     side = 'right',
   },

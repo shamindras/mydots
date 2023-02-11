@@ -50,7 +50,8 @@ null_ls.setup({
     -- code_actions.shellcheck,
 
     -- python
-    formatting.black,
+    formatting.blue,
+    -- formatting.black,
     -- formatting.black.with({
     --   condition = function(utils)
     --     return utils.root_has_file('pyproject.toml') -- change file extension if you use something else
