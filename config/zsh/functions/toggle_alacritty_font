@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# toggle the alacritty font size, currently only {16, 26} are the toggle values.
+# adapted from: https://trunc8.github.io/2021/08/08/tut-toggle-alacritty-opacity
+# dependencies: `yq` package, see: https://mikefarah.gitbook.io/yq/
+
+# If alacritty.yml does not exist, raise an alert
+[[ ! -f ~/.config/alacritty/alacritty.yml ]] && exit 0
+
+# fetch background_opacity from alacritty.yml
+# this is done directly using the `yq` package
+font_size=$(yq '.font.size' "${XDG_CONFIG_HOME}/alacritty/alacritty.yml")
+
+## Assign toggle font_size value
+case $font_size in
+16)
+	toggle_font_size=26
+	toggle_font_type="reduced"
+	;;
+*)
+	toggle_font_size=16
+	toggle_font_type="increased"
+	;;
+esac
+
+## Replace font_size value in alacritty.yml
+# this is done in place using the `yq` package
+yq -ei ".font.size = ${toggle_font_size}" "${XDG_CONFIG_HOME}/alacritty/alacritty.yml"
+printf "font size ${toggle_font_type} from ${font_size} to ${toggle_font_size}\n"
