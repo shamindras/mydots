@@ -14,6 +14,9 @@ end
 telescope.setup({
   -- configure custom mappings
   defaults = {
+    layout_config = { prompt_position = 'top' },
+    sorting_strategy = 'ascending',
+    winblend = 0,
     mappings = {
       i = {
         ['<C-n>'] = actions.move_selection_next, -- move to next result
@@ -28,7 +31,45 @@ telescope.setup({
         end,
       },
     },
-    file_ignore_patterns = { '^./.git/', '^node_modules/', '^submods/' },
+    -- Default configuration for telescope goes here:
+    -- config_key = value,
+    vimgrep_arguments = {
+      'rg',
+      -- '--color=always',
+      '--no-heading',
+      '--hidden',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--trim', -- add this value
+    },
+    pickers = {
+      find_files = {
+        find_command = { 'rg', '--files', '--hidden' },
+        -- hidden = true,
+        -- FIX: does not seem to work correctly with hidden files
+        -- find_command = {
+        --   'rg',
+        --   '--color=always',
+        --   '--find_files',
+        --   '--no-heading',
+        --   '--hidden',
+        --   '--smart-case',
+        -- },
+
+        -- find_command = {
+        --   'fd',
+        --   '.',
+        --   '--type',
+        --   'file',
+        --   '--hidden',
+        --   '--strip-cwd-prefix',
+        -- },
+      },
+    },
+    -- file_ignore_patterns = { '^./.git/', '^node_modules/', '^submods/' },
+    file_ignore_patterns = { 'git', 'node_modules', 'submods' },
   },
 })
 
