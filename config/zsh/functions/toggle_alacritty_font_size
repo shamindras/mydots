@@ -15,11 +15,11 @@ font_size=$(yq '.font.size' "${XDG_CONFIG_HOME}/alacritty/alacritty.yml")
 case $font_size in
 16)
 	toggle_font_size=26
-	toggle_font_type="reduced"
+	toggle_font_type="INCREASED"
 	;;
 *)
 	toggle_font_size=16
-	toggle_font_type="increased"
+	toggle_font_type="REDUCED"
 	;;
 esac
 
@@ -27,3 +27,8 @@ esac
 # this is done in place using the `yq` package
 yq -ei ".font.size = ${toggle_font_size}" "${XDG_CONFIG_HOME}/alacritty/alacritty.yml"
 printf "font size ${toggle_font_type} from ${font_size} to ${toggle_font_size}\n"
+
+# just start with the cleaned and resized config, user can scroll to see font
+# size change specs
+printf "\033c"
+# clear
