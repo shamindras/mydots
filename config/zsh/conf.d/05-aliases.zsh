@@ -75,6 +75,7 @@ alias pvl='pyenv local'
 alias pvi='pyenv install'
 alias pvu='pyenv uninstall'
 alias pvs='pyenv versions'
+alias pwp='pyenv which python'
 alias bp='bpython'
 
 # benchmarking

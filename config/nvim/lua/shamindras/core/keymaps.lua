@@ -129,8 +129,8 @@ keymap.set(
   -- "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden'}})<cr>",
   -- FIX: figure out why `find_files` in telescope config does not make the
   -- line below work directly
-  -- "<cmd>lua require'telescope.builtin'.find_files()<cr>",
-  "<cmd>lua require'telescope.builtin'.find_files({hidden = true})<cr>",
+  "<cmd>lua require'telescope.builtin'.find_files()<cr>",
+  -- "<cmd>lua require'telescope.builtin'.find_files({hidden = true})<cr>",
   { noremap = true }
 )
 -- keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore

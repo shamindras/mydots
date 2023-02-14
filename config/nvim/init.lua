@@ -2,10 +2,12 @@
 require('shamindras.plugins.impatient') -- impatient must be loaded first
 require('shamindras.plugins-setup')
 
--- setup basic options, keymaps, and autocmds
-require('shamindras.core.options')
+-- setup basic autocommands and keybindings
 require('shamindras.core.keymaps')
 require('shamindras.core.autocmds')
+
+-- setup basic options, keymaps, and autocmds
+require('shamindras.core.options')
 
 -- color scheme and themes
 require('shamindras.plugins.catppuccin') -- catppuccin color theme
