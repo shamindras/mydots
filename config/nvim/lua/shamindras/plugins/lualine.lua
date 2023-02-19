@@ -53,7 +53,11 @@ lualine.setup({
         path = 1,
       },
     },
-    lualine_x = { 'fileformat', 'filetype' },
+    lualine_x = {
+      { 'fileformat', colored = true, icon_only = false },
+      { 'filetype', colored = true, icon_only = false },
+    },
+    -- lualine_x = { 'fileformat', 'filetype' },
     lualine_y = {},
     lualine_z = { 'location' },
   },
@@ -61,7 +65,7 @@ lualine.setup({
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = { 'filename', 'location' },
+    lualine_c = { 'filetype', 'location' },
     lualine_x = {},
     lualine_y = {},
     lualine_z = {},

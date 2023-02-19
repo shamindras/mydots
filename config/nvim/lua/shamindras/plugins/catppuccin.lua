@@ -8,6 +8,11 @@ require('catppuccin').setup({
       surface2 = '#a3a7bc',
       surface3 = '#a3a7bc',
     },
+    -- mocha = {
+    --   base = '#000000',
+    --   mantle = '#000000',
+    --   crust = '#000000',
+    -- },
   },
   integrations = {
     aerial = false,

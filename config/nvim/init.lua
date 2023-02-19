@@ -9,6 +9,9 @@ require('shamindras.core.autocmds')
 -- setup basic options, keymaps, and autocmds
 require('shamindras.core.options')
 
+-- setup better escape
+require('shamindras.plugins.better-escape')
+
 -- color scheme and themes
 require('shamindras.plugins.catppuccin') -- catppuccin color theme
 require('shamindras.core.colorscheme') -- load this after loading color theme

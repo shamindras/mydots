@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/shamindras/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["better-escape.nvim"] = {
+    loaded = true,
+    path = "/Users/shamindras/.local/share/nvim/site/pack/packer/start/better-escape.nvim",
+    url = "https://github.com/max397574/better-escape.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/Users/shamindras/.local/share/nvim/site/pack/packer/start/catppuccin",

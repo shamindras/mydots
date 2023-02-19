@@ -31,7 +31,7 @@ mason_lspconfig.setup({
     'pylsp',
     'pyright',
     'r_language_server',
-    'sumneko_lua',
+    'lua_ls',
     'tailwindcss',
     'tsserver',
   },
