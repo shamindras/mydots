@@ -62,7 +62,16 @@ opt.iskeyword:append('-') -- consider string-string as whole word
 -- source: https://github.com/ThePrimeagen/init.lua/blob/bc8324fa1c31bd1bc81fb8a5dde684dffd324f84/lua/theprimeagen/set.lua
 ---------------------
 
-vim.opt.guicursor = ''
+-- source: https://dev.to/voyeg3r/my-ever-growing-neovim-init-lua-h0p
+vim.opt.guicursor = {
+  'n-c-ci-v:block',
+  -- "i-c-ci-ve:ver25",
+  'i-ve:ver25',
+  'r-cr:hor20',
+  'o:hor50',
+  'i:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor',
+  'sm:block-blinkwait175-blinkoff150-blinkon175',
+}
 
 vim.opt.swapfile = false
 vim.opt.backup = false

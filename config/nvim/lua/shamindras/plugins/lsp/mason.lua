@@ -30,7 +30,8 @@ mason_lspconfig.setup({
     'jedi_language_server',
     'pylsp',
     'pyright',
-    'r_language_server',
+    -- FIX: r_language_server is not installing, fix it.
+    -- 'r_language_server',
     'lua_ls',
     'tailwindcss',
     'tsserver',

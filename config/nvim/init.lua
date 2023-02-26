@@ -6,7 +6,7 @@ require('shamindras.plugins-setup')
 require('shamindras.core.keymaps')
 require('shamindras.core.autocmds')
 
--- setup basic options, keymaps, and autocmds
+-- setup basic options
 require('shamindras.core.options')
 
 -- setup better escape
