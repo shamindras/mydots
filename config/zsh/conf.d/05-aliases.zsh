@@ -13,7 +13,7 @@ alias dl="z $HOME/Downloads"
 
 # Current projects --
 alias cbox="z $HOME/DROPBOX/REPOS/codebox"
-alias dot="z $HOME/DROPBOX/REPOS/ss_dotfiles"
+alias dot="z $HOME/DROPBOX/REPOS/mydots"
 
 # Aliases -----
 alias -- -='z -' # note we need -- since command begins with -

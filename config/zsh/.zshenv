@@ -38,9 +38,11 @@ fi
 export LANGUAGE=${LANGUAGE:-en}
 export LANG=${LANG:-en_US.UTF-8}
 export LC_ALL=${LC_ALL:-en_US.UTF-8}
+export PYTHONIOENCODING=${PYTHONIOENCODING:-UTF-8}
 
 # Editor and paging
 export EDITOR=${EDITOR:-nvim}
+export BROWSER=${BROWSER:-firefox}
 export VISUAL=${VISUAL:-nvim}
 export PAGER=${PAGER:-less}
 export LESS=${LESS:-'-g -i -M -R -S -w -z-4'}
@@ -106,6 +108,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview '(bat --theme ansi-dark --color always {} 2> /dev/null || exa --tree --color=always {}) 2> /dev/null | head -200'"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 export FZF_ALT_C_OPTS="--preview 'exa --tree --color=always {} | head -200'"
+
+# Taskwarrior
+export TASKRC="${HOME}/DROPBOX/REPOS/mydots/config/taskwarrior/.taskrc"
 
 # Set the list of directories that cd searches
 # cdpath=(
