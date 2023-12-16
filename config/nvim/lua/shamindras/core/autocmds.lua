@@ -15,14 +15,14 @@ local restart_brew_conf_group =
   vim.api.nvim_create_augroup('restart_brew_conf', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = { 'yabairc', '.yabairc' },
-  command = '!brew services restart yabai',
+  command = '!yabai --restart-service',
   group = restart_brew_conf_group,
 })
 
 -- reload skhd using brew after updating config
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = { 'skhdrc', '.skhdrc' },
-  command = '!brew services restart skhd',
+  command = '!skhd --restart-service',
   group = restart_brew_conf_group,
 })
 
