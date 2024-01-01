@@ -122,6 +122,7 @@ path=(
   $CARGO_HOME/bin               # Rust CLI Utils
   $PYENV_ROOT/bin               # Pyenv CLI Utils
   $PYENV_ROOT/shims             # Python Libraries
+  # /usr/local/anaconda3/bin # conda path via homebrew
   $HOME/{,s}bin(N)
   /opt/{homebrew,local}/{,s}bin(N)
   /usr/local/{,s}bin(N)

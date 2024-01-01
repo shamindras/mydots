@@ -6,7 +6,7 @@
 sudo nvram boot-args="-v"
 
 # allow 'locate' command
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist > /dev/null 2>&1
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist >/dev/null 2>&1
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
@@ -22,16 +22,16 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
 # Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-  defaults write "${domain}" dontAutoLoad -array \
-    "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-    "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-    "/System/Library/CoreServices/Menu Extras/User.menu"
-done;
+	defaults write "$domain" dontAutoLoad -array \
+		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+		"/System/Library/CoreServices/Menu Extras/Volume.menu" \
+		"/System/Library/CoreServices/Menu Extras/User.menu"
+done
 defaults write com.apple.systemuiserver menuExtras -array \
-  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-  "/System/Library/CoreServices/Menu Extras/Clock.menu"
+	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
+	"/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 # Set highlight color to green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
@@ -87,7 +87,7 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 sudo systemsetup -setrestartfreeze on
 
 # Never go into computer sleep mode
-sudo systemsetup -setcomputersleep Off > /dev/null
+sudo systemsetup -setcomputersleep Off >/dev/null
 
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
@@ -245,9 +245,9 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # Expand the following File Info panes: “General”, “Open with”, and “Sharing & Permissions”
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
-  General -bool true \
-  OpenWith -bool true \
-  Privileges -bool true
+	General -bool true \
+	OpenWith -bool true \
+	Privileges -bool true
 
 ### "Dock & Dashboard
 
@@ -420,26 +420,26 @@ defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnab
 
 # Change indexing order and disable some file types from being indexed
 defaults write com.apple.spotlight orderedItems -array \
-  '{"enabled" = 1;"name" = "APPLICATIONS";}' \
-  '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
-  '{"enabled" = 1;"name" = "DIRECTORIES";}' \
-  '{"enabled" = 1;"name" = "PDF";}' \
-  '{"enabled" = 1;"name" = "FONTS";}' \
-  '{"enabled" = 0;"name" = "DOCUMENTS";}' \
-  '{"enabled" = 0;"name" = "MESSAGES";}' \
-  '{"enabled" = 0;"name" = "CONTACT";}' \
-  '{"enabled" = 0;"name" = "EVENT_TODO";}' \
-  '{"enabled" = 0;"name" = "IMAGES";}' \
-  '{"enabled" = 0;"name" = "BOOKMARKS";}' \
-  '{"enabled" = 0;"name" = "MUSIC";}' \
-  '{"enabled" = 0;"name" = "MOVIES";}' \
-  '{"enabled" = 0;"name" = "PRESENTATIONS";}' \
-  '{"enabled" = 0;"name" = "SPREADSHEETS";}' \
-  '{"enabled" = 0;"name" = "SOURCE";}'
+	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
+	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
+	'{"enabled" = 1;"name" = "PDF";}' \
+	'{"enabled" = 1;"name" = "FONTS";}' \
+	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
+	'{"enabled" = 0;"name" = "MESSAGES";}' \
+	'{"enabled" = 0;"name" = "CONTACT";}' \
+	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
+	'{"enabled" = 0;"name" = "IMAGES";}' \
+	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
+	'{"enabled" = 0;"name" = "MUSIC";}' \
+	'{"enabled" = 0;"name" = "MOVIES";}' \
+	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+	'{"enabled" = 0;"name" = "SOURCE";}'
 # Load new settings before rebuilding the index"
-killall mds > /dev/null 2>&1
+killall mds >/dev/null 2>&1
 # Make sure indexing is enabled for the main volume"
-sudo mdutil -i on / > /dev/null
+sudo mdutil -i on / >/dev/null
 ## Rebuild the index from scratch"
 #sudo mdutil -E / > /dev/null
 
@@ -478,17 +478,17 @@ defaults write com.googlecode.iterm2 Hotkey -bool true
 defaults write com.googlecode.iterm2 ShowPaneTitles -bool false
 # animate split-terminal dimming
 defaults write com.googlecode.iterm2 AnimateDimming -bool true
-defaults write com.googlecode.iterm2 HotkeyChar -int 96;
-defaults write com.googlecode.iterm2 HotkeyCode -int 50;
-defaults write com.googlecode.iterm2 FocusFollowsMouse -int 1;
-defaults write com.googlecode.iterm2 HotkeyModifiers -int 262401;
+defaults write com.googlecode.iterm2 HotkeyChar -int 96
+defaults write com.googlecode.iterm2 HotkeyCode -int 50
+defaults write com.googlecode.iterm2 FocusFollowsMouse -int 1
+defaults write com.googlecode.iterm2 HotkeyModifiers -int 262401
 # Make iTerm2 load new tabs in the same directory
 /usr/libexec/PlistBuddy -c "set \"New Bookmarks\":0:\"Custom Directory\" Recycle" ~/Library/Preferences/com.googlecode.iterm2.plist
 # setting fonts
-defaults write com.googlecode.iterm2 "Normal Font" -string "Hack-Regular 12";
-defaults write com.googlecode.iterm2 "Non Ascii Font" -string "RobotoMonoForPowerline-Regular 12";
+defaults write com.googlecode.iterm2 "Normal Font" -string "Hack-Regular 12"
+defaults write com.googlecode.iterm2 "Non Ascii Font" -string "RobotoMonoForPowerline-Regular 12"
 # reading iterm settings
-defaults read -app iTerm > /dev/null 2>&1;
+defaults read -app iTerm >/dev/null 2>&1
 
 ### Time Machine
 
@@ -525,19 +525,19 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 # Set columns for each tab
 defaults write com.apple.ActivityMonitor "UserColumnsPerTab v5.0" -dict \
-    '0' '( Command, CPUUsage, CPUTime, Threads, PID, UID, Ports )' \
-    '1' '( Command, ResidentSize, Threads, Ports, PID, UID,  )' \
-    '2' '( Command, PowerScore, 12HRPower, AppSleep, UID, powerAssertion )' \
-    '3' '( Command, bytesWritten, bytesRead, Architecture, PID, UID, CPUUsage )' \
-    '4' '( Command, txBytes, rxBytes, PID, UID, txPackets, rxPackets, CPUUsage )'
+	'0' '( Command, CPUUsage, CPUTime, Threads, PID, UID, Ports )' \
+	'1' '( Command, ResidentSize, Threads, Ports, PID, UID,  )' \
+	'2' '( Command, PowerScore, 12HRPower, AppSleep, UID, powerAssertion )' \
+	'3' '( Command, bytesWritten, bytesRead, Architecture, PID, UID, CPUUsage )' \
+	'4' '( Command, txBytes, rxBytes, PID, UID, txPackets, rxPackets, CPUUsage )'
 
 # Sort columns in each tab
 defaults write com.apple.ActivityMonitor UserColumnSortPerTab -dict \
-    '0' '{ direction = 0; sort = CPUUsage; }' \
-    '1' '{ direction = 0; sort = ResidentSize; }' \
-    '2' '{ direction = 0; sort = 12HRPower; }' \
-    '3' '{ direction = 0; sort = bytesWritten; }' \
-    '4' '{ direction = 0; sort = txBytes; }'
+	'0' '{ direction = 0; sort = CPUUsage; }' \
+	'1' '{ direction = 0; sort = ResidentSize; }' \
+	'2' '{ direction = 0; sort = 12HRPower; }' \
+	'3' '{ direction = 0; sort = bytesWritten; }' \
+	'4' '{ direction = 0; sort = txBytes; }'
 
 # Update refresh frequency (in seconds)
 # 1: Very often (1 sec)
@@ -597,10 +597,16 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 # Disable continuous spell checking
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
+# hammerspoon to use XDG config
+# currently, there is no way to pass in XDG path via config, so you change the
+# macOS options directly.
+# source: https://github.com/Hammerspoon/hammerspoon/issues/2175#issuecomment-530413122
+defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
+
 # For Vim for VSCode keybindings
 # Source: https://github.com/VSCodeVim/Vim#mac
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false              # For VS Code
-defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false      # For VS Code Insider
-defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false         # For VS Codium
-defaults write com.microsoft.VSCodeExploration ApplePressAndHoldEnabled -bool false   # For VS Codium Exploration users
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false            # For VS Code
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false    # For VS Code Insider
+defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false       # For VS Codium
+defaults write com.microsoft.VSCodeExploration ApplePressAndHoldEnabled -bool false # For VS Codium Exploration users
 defaults delete -g ApplePressAndHoldEnabled

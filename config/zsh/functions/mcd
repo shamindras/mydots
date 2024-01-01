@@ -2,5 +2,5 @@
 # source: https://stackoverflow.com/a/74904174/4687531
 mcd (){
     mkdir -p -- "$1" &&
-    z "$1"
+    cd "$1"
 }

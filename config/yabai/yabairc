@@ -48,7 +48,8 @@ yabai -m config window_gap                   4
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Photo Booth$" manage=off
-# yabai -m rule --add app="^Preview" manage=off
+yabai -m rule --add app="^Preview" manage=off
+yabai -m rule --add app="^Alfred Preferences$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add app="^Finder$" manage=off
